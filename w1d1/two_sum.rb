@@ -1,6 +1,9 @@
 # Finds a pair of numbers in an array that sum to zero
 
-class Array
+
+
+
+hello worldclass Array
   def two_sum
     arr = self
 
