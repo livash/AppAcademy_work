@@ -25,7 +25,7 @@ module Searchable
     nil
   end
 
-  def count
+  def count #what is the purpose of this method?
     1 + children.map(&:count).inject(0, :+)
   end
 end
@@ -62,7 +62,7 @@ class BinaryTreeNode
     set_child(child, 1)
   end
 
-  protected
+  protected  # what is the purpose for this?
   attr_writer :parent
 
   def set_child(new_child, position)

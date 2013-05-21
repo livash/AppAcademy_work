@@ -51,7 +51,7 @@ def substrings(string)
   subs = []
 
   string.length.times do |sub_start|
-    debugger
+    #debugger
     ((sub_start + 1)..(string.length)).each do |sub_end|
       subs << string[sub_start...sub_end]
     end

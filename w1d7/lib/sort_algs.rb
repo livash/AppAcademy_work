@@ -1,11 +1,13 @@
+# !/usr/bin/env ruby
+
 #write three sorting methods for the Array class
 # shell sort, merge sort and bubble sort
 # count how many times each one is called to srt the saem array
 
 
-$shell_sort_counter = 0
-$merge_sort_counter = 0
-$bubble_sort_counter = 0
+# $shell_sort_counter = 0
+# $merge_sort_counter = 0
+# $bubble_sort_counter = 0
 
 class Array
   def shell_sort(sorting_step = 3)
