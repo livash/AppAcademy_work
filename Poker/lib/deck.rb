@@ -1,12 +1,12 @@
 require_relative 'card'
+require_relative 'card_suits_faces'
 
 class Deck
-  SUITS = [:hearts, :diamonds, :spades, :clubs]
-  FACES = [:K, :Q, :J, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+  include CardSuitsFaces
   attr_accessor :deck
   
   def initialize
-    @deck = generate_deck.shuffle!
+    @deck = generate_deck
   end
   
   private
@@ -19,6 +19,6 @@ class Deck
       end
     end
     
-    new_deck
+    new_deck.shuffle.shuffle
   end
 end

@@ -50,3 +50,10 @@ class HumanPlayer
     gets.chomp.split(",").map { |coord_s| Integer(coord_s) }
   end
 end
+
+if __FILE__ == $PROGRAM_NAME
+  # player_one = HumanPlayer.new(:white)
+ #  player_two = HumanPlayer.new(:black)
+  game = Game.new
+  game.play
+end

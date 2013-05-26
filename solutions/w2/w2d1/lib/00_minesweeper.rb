@@ -39,7 +39,7 @@ class Tile
       [row, col].all? { |coord| (0...@board.grid_size).include?(coord) }
     end
 
-    adjacent_coords.map { |pos| @board.tile_at(pos) }
+    adjacent_coords.map { |pos| @board.tile_at(pos) } #<------?????????
   end
 
   def adjacent_bomb_count
