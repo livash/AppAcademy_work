@@ -6,8 +6,7 @@ class Hand
   # object. This is in contrast to the `#initialize` method that
   # expects an `Array` of cards to hold.
   def self.deal_from(deck)
-    h = Hand.new(deck.take(2))
-    h
+    Hand.new(deck.take(2))
   end
 
   def initialize(cards)
@@ -48,8 +47,7 @@ class Hand
 
   def hit(deck)
     raise 'already busted' if busted?
-    card = deck.take(1) if points <= 21
-    @cards += card
+    @cards = deck.take(1)
   end
 
   def beats?(other_hand)
