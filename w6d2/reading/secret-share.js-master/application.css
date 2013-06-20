@@ -1,0 +1,12 @@
+#sidebar {
+  float: left;
+
+  padding-right: 10px;
+  border-right: 1px solid black;
+  margin-right: 10px;
+}
+
+#sidebar ul {
+  margin: auto;
+  padding: 0;
+}

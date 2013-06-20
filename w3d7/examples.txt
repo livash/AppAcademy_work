@@ -1,0 +1,74 @@
+REQUEST
+GET /wiki/Main_Page http/1.1
+Host: en.wikipedia.org
+
+RESPONCE HEADERS
+HTTP/1.0 200 OK <<-- "status code"
+
+...other status codes
+.....404 Not found
+.....301 Moved Permanently
+.....302 Temporarily moved
+.....403 Unauthorized request, Forbidden
+.....400 Bad Request
+.....+ other status codes
+
+
+RESPONCE BODY
+<html page itself>
+
+-------------------------
+REQUEST TYPES
+...GET
+...POST
+...PUT
+...DELETE
+
+* HTTP requests are processed by the web application servers.
+*
+
+--------------------------
+URLS
+ * URL - uniform request locator
+ * scheme:/host:port/path?query_string#fragment_id
+ 
+ *SCHEME: - describes the protocol used
+ 	http:  OR  https:
+
+ *HOST: can be a domain name (appacademy.io) or an IP address (107.21.218.20)
+
+ *PORT: by defaulr http uses port 80, https uses port 443, Rails server on my machine uses posrt 3000 (http/localhost:3000/)
+ 
+ *PATH: identifies path on the server. FOr example, /users/1/post/1234. The path to request the root of the server is "/".
+ 
+ *QUERY_STRING: allows us to send additional information along with our request, in URL encoded key-value pairs. The start of the query string is signalled by the "?", for example, ?animal=cat&color=brown. Key-value pairs are separated by the "&" ampersands.
+ 
+ *FRAGMENT_ID: is the part after "#" mark. It is used to identify the piece of the web page you want to jump to.
+ 
+ 
+-----------------------------
+REQUEST BODY AND QUERY STRING
+
+Example:
+..Post /judges HTTP/1.1
+..Host:law.com
+..Content-type:applicatin/x-http-form-urlenclosed
+
+..name=Joe+Brown&court=television+court	
+
+..www.bing.com/search?q=where+in+the+world+is+carmen+sandiego
+
+
+-----------------------------
+API
+
+*API - application programming interface
+
+REST CLIENT
+> require 'rest-client'
+>puts RestCLient.get("http://graph.facebook.com/kush.patel2")
+
+-----------------------------
+QUESTIONS
+?? What is the purpose of google crawlers and google bots?
+?? What are other web protocols besides http: and https:?

@@ -206,6 +206,7 @@ u.post_ids = [3, 4, 5]
 ```
 
 1. Have any attributes changed?
+it looks like 1st user lost some posts associated with him.
 2. If any attributes have changed, which attributes exactly?
 3. Have any changes been persisted to the database?
 
@@ -213,13 +214,14 @@ u.post_ids = [3, 4, 5]
 
 Oops. I didn't mean to assign the post with `id` 5 to the second user. Set the user of that post back to the first user. Do not use `update_attributes` or the like.
 
+Users.first.posts_ids = [1, 2, 5]
 
 ## Question 7.
 
 ```
 class Team
   has_many :memberships
-  has_many :users, through: :memberships
+  has_many :users, through: => :memberships
 end
 
 class Memberships
