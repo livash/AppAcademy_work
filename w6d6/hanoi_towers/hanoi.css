@@ -1,0 +1,20 @@
+body {
+	background: grey;
+}
+
+.main-body {
+	background: blue;
+	width: 330;
+	height: 300;
+}
+
+.tower {
+	background: white;
+	width: 109;
+	height: 150;
+	float: left;
+}
+
+.errors {
+	color: balck;
+}

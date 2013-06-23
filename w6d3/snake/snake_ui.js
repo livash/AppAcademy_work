@@ -21,7 +21,7 @@ Snake.UI = (function() {
 			if (that.game.isOver()) {
 				clearInterval(refreshIntervalId);
 			}
-		}, 100);
+		}, 5);
 	}
 	
 	UI.prototype.drawBoard = function() {
@@ -37,7 +37,7 @@ Snake.UI = (function() {
 			for(var j = 0; j <that.game.board.length; j++) {
 				var element = $('<div>');
 				element.addClass('element');
-				element.text('*');
+				element.text('');
 				element.css({'float' : 'left'});
 				row.append(element);
 			}	

@@ -3,27 +3,27 @@
 }
 
 .row {
-	width: 700px;
-	height: 26px;
+	width: 2000px;
+	height: 10px;
 }
 
 .element {
-	width: 25px;
-	height: 25px;
+	width: 9px;
+	height: 9px;
 	display: inline;
 	background-color: blue;
 }
 
 .snake {
-	width: 25px;
-	height: 25px;
+	width: 9px;
+	height: 9px;
 	display: inline;
 	background-color: yellow;
 }
 
 .apple {
-	width: 25px;
-	height: 25px;
+	width: 9px;
+	height: 9px;
 	display: inline;
 	background-color: red;
 }
