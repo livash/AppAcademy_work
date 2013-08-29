@@ -1,0 +1,55 @@
+Favourite algorithm - have one. People might ask you about it.
+
+Be a nerd about technology. 
+
+Presenter: Parker, SneackPick, Small company, technical engineer
+Parker is quiting his job to start a technichal interview app.
+
+Onsite interview vs phone screen.
+- small talk (is beginning)
+- look at the resume, tell me a bit about one of your projects
+- Give a little model of how your project app was built (PURPOSE: to make candidae more comfortable, looking for example of ownership, talk about a bug, or implementation of how to make something faster, reach into other examples of ownership, give an examle of an interesting problem that you solved. Basically give an example of overcoming a technical challange.)
+
+- tell e about your prpoject (smile when you talk about it. Seem to be a person who is excited about building this project. Don't be a boring candidate.)
+
+- If you say you know Ruby or JS well be prepared for an isoteric question about the language. You might not know the complete answer, just outline the edges of the problem.
+
+- Next, technical questions. Can you think algorithmically, are you a good communicator. Keep in mmind you ae interviewing the interviewer. Realize, that this part of an interview simmulates an event that will happen on day to day babsis. Interviwer is looking for someone next whom you can work. Be nice and don't interrupt.
+
+ - can you code.... Is next part. Poeple look at your code on github for quality and neatness of your code. Interviwer is looking for the thinking and not the answer.
+ 
+ - It is not about speed. Be precise and careful. Take a second, breath, state what you know. This is this type od data structure, I can bruteforce it, may be use this algorithm... They are looking for thinking.
+ 
+ - Use white board. YOu are trying to convince the interviwer that you are a fun person to wok on the problem. Use we, instead of I. We know that it is ..., we could use this ... Be interested. Optimism is cool. 
+ 
+ - If you don't understand the solution, ask. 
+ - Do not write code on paper.
+ 
+ - Practice on paper. binary search, BFS, merge sort. DOnt' worry aout syntax.
+ - Do not use shorter variable names. Use desriptive var names. It'll help you not to be confused.
+ - prefix boolean with "is", is_cool, is_array..... Use one letter for indecies.
+ - Write helper functions and avoid implementing them.
+ - Suppose, you are trying to reverse a string... 
+ 
+ - DO you have any questions for me... It's curtecy... They are trying to sell you if they liked you.
+ 
+ - What are good questions? Ask business and engineering questions. How does the business works. In a smaller company it is good to know about business. What is an interesting problem you worked recently. DO you have software engineering strategy, How do you monetize. Ask about test coverage and how do they testdrive... Some people like to do test driving. Write tests first and then write code....
+ 
+ - How to get past the point in the interview where you are stuck. You wan tot buy some time. Ask some questions. What are we optimizing for. DO we have any constrains on the set. Draw helpful illustrations for yourself. Try to bruteforce 1st and then think about efficiency later. 
+ 
+ - Simplyfy the pornblem, solve it and then try to add complexity later.
+ 
+ - list of intuitions ...
+  = at some point winning at coding interviews is a game of pattern matching.
+  = it gets easier with practice
+  = make your little list of intuitions
+  = as you do the sample problem, step back and think about what intuition would have brought me to the solution to the problem.
+  
+  1. bucketizing. Puting things iinto and taking out of a hash map is constant time.
+  2. think of data structures: linked lists, hash maps, arrays, stacks, queues,
+  3. Divide and conquer. For ex, binary search. Think of a problem how to reduce a problem to a smaller one. 
+  4. use mathematical property.
+  5. think about edge cases, but think about it last... 
+  
+  Interview is an exercise in thinking out loud...
+  

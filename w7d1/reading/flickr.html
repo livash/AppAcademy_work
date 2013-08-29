@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<!-- saved from url=(0028)http://localhost:3000/photos -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>flickr</title>
+    <link href="./flickr_files/jquery.fileupload-ui.css" media="all" rel="stylesheet" type="text/css">
+<link href="./flickr_files/application.css" media="all" rel="stylesheet" type="text/css">
+<link href="./flickr_files/albums.css" media="all" rel="stylesheet" type="text/css">
+<link href="./flickr_files/bootstrap-responsive.css" media="all" rel="stylesheet" type="text/css">
+<link href="./flickr_files/bootstrap.css" media="all" rel="stylesheet" type="text/css">
+<link href="./flickr_files/collections.css" media="all" rel="stylesheet" type="text/css">
+<link href="./flickr_files/comments.css" media="all" rel="stylesheet" type="text/css">
+<link href="./flickr_files/galleries.css" media="all" rel="stylesheet" type="text/css">
+<link href="./flickr_files/home.css" media="all" rel="stylesheet" type="text/css">
+<link href="./flickr_files/photos.css" media="all" rel="stylesheet" type="text/css">
+<link href="./flickr_files/taggings.css" media="all" rel="stylesheet" type="text/css">
+<link href="./flickr_files/tags.css" media="all" rel="stylesheet" type="text/css">
+    <script src="./flickr_files/jquery.js" type="text/javascript"></script>
+<script src="./flickr_files/jquery_ujs.js" type="text/javascript"></script>
+<script src="./flickr_files/underscore.js" type="text/javascript"></script>
+<script src="./flickr_files/jquery.serializeJSON.js" type="text/javascript"></script>
+<script src="./flickr_files/jquery.ui.core.js" type="text/javascript"></script>
+<script src="./flickr_files/jquery.ui.widget.js" type="text/javascript"></script>
+<script src="./flickr_files/jquery.ui.accordion.js" type="text/javascript"></script>
+<script src="./flickr_files/jquery.ui.position.js" type="text/javascript"></script>
+<script src="./flickr_files/jquery.ui.menu.js" type="text/javascript"></script>
+<script src="./flickr_files/jquery.ui.autocomplete.js" type="text/javascript"></script>
+<script src="./flickr_files/jquery.ui.button.js" type="text/javascript"></script>
+<script src="./flickr_files/jquery.ui.datepicker.js" type="text/javascript"></script>
+<script src="./flickr_files/jquery.ui.mouse.js" type="text/javascript"></script>
+<script src="./flickr_files/jquery.ui.draggable.js" type="text/javascript"></script>
+<script src="./flickr_files/jquery.ui.resizable.js" type="text/javascript"></script>
+<script src="./flickr_files/jquery.ui.dialog.js" type="text/javascript"></script>
+<script src="./flickr_files/jquery.ui.droppable.js" type="text/javascript"></script>
+<script src="./flickr_files/jquery.ui.effect.js" type="text/javascript"></script>
+<script src="./flickr_files/jquery.ui.effect-blind.js" type="text/javascript"></script>
+<script src="./flickr_files/jquery.ui.effect-bounce.js" type="text/javascript"></script>
+<script src="./flickr_files/jquery.ui.effect-clip.js" type="text/javascript"></script>
+<script src="./flickr_files/jquery.ui.effect-drop.js" type="text/javascript"></script>
+<script src="./flickr_files/jquery.ui.effect-explode.js" type="text/javascript"></script>
+<script src="./flickr_files/jquery.ui.effect-fade.js" type="text/javascript"></script>
+<script src="./flickr_files/jquery.ui.effect-fold.js" type="text/javascript"></script>
+<script src="./flickr_files/jquery.ui.effect-highlight.js" type="text/javascript"></script>
+<script src="./flickr_files/jquery.ui.effect-pulsate.js" type="text/javascript"></script>
+<script src="./flickr_files/jquery.ui.effect-scale.js" type="text/javascript"></script>
+<script src="./flickr_files/jquery.ui.effect-shake.js" type="text/javascript"></script>
+<script src="./flickr_files/jquery.ui.effect-slide.js" type="text/javascript"></script>
+<script src="./flickr_files/jquery.ui.effect-transfer.js" type="text/javascript"></script>
+<script src="./flickr_files/jquery.ui.progressbar.js" type="text/javascript"></script>
+<script src="./flickr_files/jquery.ui.selectable.js" type="text/javascript"></script>
+<script src="./flickr_files/jquery.ui.slider.js" type="text/javascript"></script>
+<script src="./flickr_files/jquery.ui.sortable.js" type="text/javascript"></script>
+<script src="./flickr_files/jquery.ui.spinner.js" type="text/javascript"></script>
+<script src="./flickr_files/jquery.ui.tabs.js" type="text/javascript"></script>
+<script src="./flickr_files/jquery.ui.tooltip.js" type="text/javascript"></script>
+<script src="./flickr_files/jquery.ui.all.js" type="text/javascript"></script>
+<script src="./flickr_files/jquery.ui.widget(1).js" type="text/javascript"></script>
+<script src="./flickr_files/load-image.js" type="text/javascript"></script>
+<script src="./flickr_files/canvas-to-blob.js" type="text/javascript"></script>
+<script src="./flickr_files/tmpl.js" type="text/javascript"></script>
+<script src="./flickr_files/jquery.iframe-transport.js" type="text/javascript"></script>
+<script src="./flickr_files/jquery.fileupload.js" type="text/javascript"></script>
+<script src="./flickr_files/jquery.fileupload-fp.js" type="text/javascript"></script>
+<script src="./flickr_files/jquery.fileupload-ui.js" type="text/javascript"></script>
+<script src="./flickr_files/locale.js" type="text/javascript"></script>
+<script src="./flickr_files/index.js" type="text/javascript"></script>
+<script src="./flickr_files/flickr.js" type="text/javascript"></script>
+<script src="./flickr_files/album_form.js" type="text/javascript"></script>
+<script src="./flickr_files/index(1).js" type="text/javascript"></script>
+<script src="./flickr_files/index(2).js" type="text/javascript"></script>
+<script src="./flickr_files/album.js" type="text/javascript"></script>
+<script src="./flickr_files/photo.js" type="text/javascript"></script>
+<script src="./flickr_files/albums.js" type="text/javascript"></script>
+<script src="./flickr_files/photos.js" type="text/javascript"></script>
+<script src="./flickr_files/albums_index.js" type="text/javascript"></script>
+<script src="./flickr_files/new_album_form.js" type="text/javascript"></script>
+<script src="./flickr_files/photos_index.js" type="text/javascript"></script>
+<script src="./flickr_files/albums_router.js" type="text/javascript"></script>
+<script src="./flickr_files/photos_router.js" type="text/javascript"></script>
+<script src="./flickr_files/bootstrap.js" type="text/javascript"></script>
+<script src="./flickr_files/comment.js" type="text/javascript"></script>
+<script src="./flickr_files/galleries.js" type="text/javascript"></script>
+<script src="./flickr_files/gallery.js" type="text/javascript"></script>
+<script src="./flickr_files/photo(1).js" type="text/javascript"></script>
+<script src="./flickr_files/tag.js" type="text/javascript"></script>
+<script src="./flickr_files/templates.js" type="text/javascript"></script>
+<script src="./flickr_files/application.js" type="text/javascript"></script>
+    <meta content="authenticity_token" name="csrf-param">
+<meta content="9BEcurVmMsIr1h8hAlUfCArKGPtlXQr5p3MdBBrB5S4=" name="csrf-token">
+	<script type="text/javascript">
+//<![CDATA[
+window._token = '9BEcurVmMsIr1h8hAlUfCArKGPtlXQr5p3MdBBrB5S4=';
+//]]>
+</script>
+	<script type="text/javascript">
+//<![CDATA[
+window._userID = '3' 
+//]]>
+</script>
+</head>
+<body style="">
+	<div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="brand" href="http://localhost:3000/galleries">flickr</a>
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+			<li class="dropdown">
+				<a class="dropdown-toggle" data-toggle="dropdown" href="http://localhost:3000/photos#">You</a> <!-- href="http://localhost:3000/photos -->
+		 	  <ul class="dropdown-menu" role="menu">
+				<li><a tabindex="-1" href="./flickr_files/flickr.html">Photostream</a></li>
+				<li><a tabindex="-1" href="http://localhost:3000/albums">Albums</a></li>
+				<li><a tabindex="-1" href="http://localhost:3000/photos#">Map</a></li>
+				<li><a tabindex="-1" href="http://localhost:3000/photos#">Favorites</a></li>
+				<li><a tabindex="-1" href="http://localhost:3000/galleries">Gallery</a></li>
+				<li><a tabindex="-1" href="http://localhost:3000/photos#">Recent Activity</a></li>
+				<li><a tabindex="-1" href="http://localhost:3000/photos#">Organize</a></li>
+			    
+			  </ul>
+		  	</li>
+          <li><a href="http://localhost:3000/photos#contacts">Contacts</a></li>
+          <li><a href="http://localhost:3000/photos#Communities">Communities</a></li>
+		  <li><a href="http://localhost:3000/photos#Explore">Explore</a></li>
+		  <li><a href="http://localhost:3000/photos/new">Upload</a></li>
+        </ul>
+      </div><!--/.nav-collapse -->
+	  <div class="navbar-inverse nav-collapse navbar-search-form" style="float:right">
+		  <form action="http://localhost:3000/tags/search" method="get" class="navbar-form" id="search_tag">
+			  <input type="text" name="tag[title]">
+			  <i class="icon-search" style="position:absolute;right:72px;top:10px"></i>
+			  <!-- <input type="submit" class="search-icon" value="?"> -->
+			  <a href="http://localhost:3000/users/sign_out" data-method="delete" rel="nofollow">Logout</a>
+		  </form>			 
+	  </div>
+    </div>
+  </div>
+</div>
+<!-- clossing of the div on line 31 is in the _footer partial -->
+<div id="wrap">
+    <div class="container" style="margin-top:50px">
+		<!-- <p class="notice"></p>
+	    <p class="alert"></p> -->
+
+		<div class="content-index">
+	<h2>Your Photostream</h2>
+		<div class="photo-thumbnail">
+			<a href="http://localhost:3000/photos/95">
+			<img alt="981704_4459825393376_1071451150_o" class="thumbnail-photo" src="./flickr_files/981704_4459825393376_1071451150_o.jpg">
+			</a>
+			<form action="http://localhost:3000/photos/95" class="button_to" method="post"><div><input name="_method" type="hidden" value="delete"><input type="submit" value="X"><input name="authenticity_token" type="hidden" value="9BEcurVmMsIr1h8hAlUfCArKGPtlXQr5p3MdBBrB5S4="></div></form>
+		</div>
+		<div class="photo-thumbnail">
+			<a href="http://localhost:3000/photos/96">
+			<img alt="1040871_4459825713384_166591149_o" class="thumbnail-photo" src="./flickr_files/1040871_4459825713384_166591149_o.jpg">
+			</a>
+			<form action="http://localhost:3000/photos/96" class="button_to" method="post"><div><input name="_method" type="hidden" value="delete"><input type="submit" value="X"><input name="authenticity_token" type="hidden" value="9BEcurVmMsIr1h8hAlUfCArKGPtlXQr5p3MdBBrB5S4="></div></form>
+		</div>
+		<div class="photo-thumbnail">
+			<a href="http://localhost:3000/photos/88">
+			<img alt="208971_2977441694710_424053607_n" class="thumbnail-photo" src="./flickr_files/208971_2977441694710_424053607_n.jpg">
+			</a>
+			<form action="http://localhost:3000/photos/88" class="button_to" method="post"><div><input name="_method" type="hidden" value="delete"><input type="submit" value="X"><input name="authenticity_token" type="hidden" value="9BEcurVmMsIr1h8hAlUfCArKGPtlXQr5p3MdBBrB5S4="></div></form>
+		</div>
+		<div class="photo-thumbnail">
+			<a href="http://localhost:3000/photos/89">
+			<img alt="282731_2977292370977_1122020112_n" class="thumbnail-photo" src="./flickr_files/282731_2977292370977_1122020112_n.jpg">
+			</a>
+			<form action="http://localhost:3000/photos/89" class="button_to" method="post"><div><input name="_method" type="hidden" value="delete"><input type="submit" value="X"><input name="authenticity_token" type="hidden" value="9BEcurVmMsIr1h8hAlUfCArKGPtlXQr5p3MdBBrB5S4="></div></form>
+		</div>
+		<div class="photo-thumbnail">
+			<a href="http://localhost:3000/photos/90">
+			<img alt="282925_2978276315575_1396398800_n" class="thumbnail-photo" src="./flickr_files/282925_2978276315575_1396398800_n.jpg">
+			</a>
+			<form action="http://localhost:3000/photos/90" class="button_to" method="post"><div><input name="_method" type="hidden" value="delete"><input type="submit" value="X"><input name="authenticity_token" type="hidden" value="9BEcurVmMsIr1h8hAlUfCArKGPtlXQr5p3MdBBrB5S4="></div></form>
+		</div>
+		<div class="photo-thumbnail">
+			<a href="http://localhost:3000/photos/91">
+			<img alt="428453_2977292130971_1952953251_n" class="thumbnail-photo" src="./flickr_files/428453_2977292130971_1952953251_n.jpg">
+			</a>
+			<form action="http://localhost:3000/photos/91" class="button_to" method="post"><div><input name="_method" type="hidden" value="delete"><input type="submit" value="X"><input name="authenticity_token" type="hidden" value="9BEcurVmMsIr1h8hAlUfCArKGPtlXQr5p3MdBBrB5S4="></div></form>
+		</div>
+		<div class="photo-thumbnail">
+			<a href="http://localhost:3000/photos/92">
+			<img alt="428560_2977292690985_1692761346_n" class="thumbnail-photo" src="./flickr_files/428560_2977292690985_1692761346_n.jpg">
+			</a>
+			<form action="http://localhost:3000/photos/92" class="button_to" method="post"><div><input name="_method" type="hidden" value="delete"><input type="submit" value="X"><input name="authenticity_token" type="hidden" value="9BEcurVmMsIr1h8hAlUfCArKGPtlXQr5p3MdBBrB5S4="></div></form>
+		</div>
+		<div class="photo-thumbnail">
+			<a href="http://localhost:3000/photos/93">
+			<img alt="481055_2977292530981_1747289700_n" class="thumbnail-photo" src="./flickr_files/481055_2977292530981_1747289700_n.jpg">
+			</a>
+			<form action="http://localhost:3000/photos/93" class="button_to" method="post"><div><input name="_method" type="hidden" value="delete"><input type="submit" value="X"><input name="authenticity_token" type="hidden" value="9BEcurVmMsIr1h8hAlUfCArKGPtlXQr5p3MdBBrB5S4="></div></form>
+		</div>
+		<div class="photo-thumbnail">
+			<a href="http://localhost:3000/photos/94">
+			<img alt="965262_4459826073393_1138257108_o" class="thumbnail-photo" src="./flickr_files/965262_4459826073393_1138257108_o.jpg">
+			</a>
+			<form action="http://localhost:3000/photos/94" class="button_to" method="post"><div><input name="_method" type="hidden" value="delete"><input type="submit" value="X"><input name="authenticity_token" type="hidden" value="9BEcurVmMsIr1h8hAlUfCArKGPtlXQr5p3MdBBrB5S4="></div></form>
+		</div>
+		<div class="photo-thumbnail">
+			<a href="http://localhost:3000/photos/97">
+			<img alt="1048949_4459826113394_1585162555_o" class="thumbnail-photo" src="./flickr_files/1048949_4459826113394_1585162555_o.jpg">
+			</a>
+			<form action="http://localhost:3000/photos/97" class="button_to" method="post"><div><input name="_method" type="hidden" value="delete"><input type="submit" value="X"><input name="authenticity_token" type="hidden" value="9BEcurVmMsIr1h8hAlUfCArKGPtlXQr5p3MdBBrB5S4="></div></form>
+		</div>
+		<div class="photo-thumbnail">
+			<a href="http://localhost:3000/photos/98">
+			<img alt="1049080_4459802072793_1055141251_o" class="thumbnail-photo" src="./flickr_files/1049080_4459802072793_1055141251_o.jpg">
+			</a>
+			<form action="http://localhost:3000/photos/98" class="button_to" method="post"><div><input name="_method" type="hidden" value="delete"><input type="submit" value="X"><input name="authenticity_token" type="hidden" value="9BEcurVmMsIr1h8hAlUfCArKGPtlXQr5p3MdBBrB5S4="></div></form>
+		</div>
+		<div class="photo-thumbnail">
+			<a href="http://localhost:3000/photos/99">
+			<img alt="1064445_4459801472778_1746831468_o" class="thumbnail-photo" src="./flickr_files/1064445_4459801472778_1746831468_o.jpg">
+			</a>
+			<form action="http://localhost:3000/photos/99" class="button_to" method="post"><div><input name="_method" type="hidden" value="delete"><input type="submit" value="X"><input name="authenticity_token" type="hidden" value="9BEcurVmMsIr1h8hAlUfCArKGPtlXQr5p3MdBBrB5S4="></div></form>
+		</div>
+		<div class="photo-thumbnail">
+			<a href="http://localhost:3000/photos/100">
+			<img alt="1064609_4459801752785_138352263_o" class="thumbnail-photo" src="./flickr_files/1064609_4459801752785_138352263_o.jpg">
+			</a>
+			<form action="http://localhost:3000/photos/100" class="button_to" method="post"><div><input name="_method" type="hidden" value="delete"><input type="submit" value="X"><input name="authenticity_token" type="hidden" value="9BEcurVmMsIr1h8hAlUfCArKGPtlXQr5p3MdBBrB5S4="></div></form>
+		</div>
+		<div class="photo-thumbnail">
+			<a href="http://localhost:3000/photos/101">
+			<img alt="599264_3141446074717_126296809_n" class="thumbnail-photo" src="./flickr_files/599264_3141446074717_126296809_n.jpg">
+			</a>
+			<form action="http://localhost:3000/photos/101" class="button_to" method="post"><div><input name="_method" type="hidden" value="delete"><input type="submit" value="X"><input name="authenticity_token" type="hidden" value="9BEcurVmMsIr1h8hAlUfCArKGPtlXQr5p3MdBBrB5S4="></div></form>
+		</div>
+		<div class="photo-thumbnail">
+			<a href="http://localhost:3000/photos/102">
+			<img alt="564056_2977291770962_1271809161_n" class="thumbnail-photo" src="./flickr_files/564056_2977291770962_1271809161_n.jpg">
+			</a>
+			<form action="http://localhost:3000/photos/102" class="button_to" method="post"><div><input name="_method" type="hidden" value="delete"><input type="submit" value="X"><input name="authenticity_token" type="hidden" value="9BEcurVmMsIr1h8hAlUfCArKGPtlXQr5p3MdBBrB5S4="></div></form>
+		</div>
+</div>
+
+		
+	</div>	
+	<!-- beggining of the div on line 3 is in the _nav-bar -->
+  <div id="push"></div>
+</div>
+<div id="footer">
+	<div class="container" style="background-color:#f5f5f5">
+		<div class="foot-col-custom" style="font-size:12px;line-height:15px;width:20%;float:left">
+			<dl>
+				<dt>About Flickr-Light</dt>
+				<dd><a href="http://localhost:3000/photos#/about/">Creator: Olena I.</a></dd>
+				<dd><a href="http://localhost:3000/photos#/contributors/">Contributors</a></dd>
+				<dd><a href="http://olena-blog.tumblr.com/">Blog</a></dd>
+			</dl>
+		</div>
+		<div class="foot-col" style="font-size:12px;line-height:15px;width:20%;float:left">
+			<dl>
+				<dt>Resources</dt>
+				<dd><a href="https://github.com/livash/Flicker">github</a></dd>
+				<dd><a href="http://www.flickr.com/">Original Flickr</a></dd>
+			</dl>
+		</div>
+		<div class="foot-col" style="font-size:12px;line-height:15px;width:20%;float:left">
+			<dl>
+				<dt>Special Thanks</dt>
+				<dd><a href="http://www.appacademy.io/">App Academy</a></dd>
+				<dd><a href="http://www.appacademy.io/#p-staff">Ned Ruggeri</a></dd>
+			</dl>
+		</div>
+	</div>
+</div>
+
+
+</body></html>

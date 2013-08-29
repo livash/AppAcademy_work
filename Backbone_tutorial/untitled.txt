@@ -1,0 +1,56 @@
+Select Count(*)
+From users
+where active="true"
+
+Select count(*)
+From users
+Where visit_time Between t1 AND t2
+
+Select employee.name
+FROM emplyees JOIN departments ON (employee.dept.id=department.id)
+Where department.name="HR"
+
+#closure
+
+function foo(x) {
+	var tmp = 3;
+	return function (y) {
+		return (x + y + tmp);
+	}
+}
+
+var bar = foo(2); <= bar is a closure
+bar(10)
+
+# calling a function in JS
+ - function style
+ - method style
+ - constructor style
+ 
+ function foo(x) {
+ console.log("x = " + x );
+ }
+ 
+ var fun = foo;
+ var res = foo(2);
+ 
+ function Animal(name) {
+ 	this.name = name;
+	this.getName = function() {
+		return this.name;
+	}
+ }
+ 
+ function F() {};
+ F = new Animal();
+ 
+ function Dog(name) {
+ this.name = name;
+ }
+ 
+ Dog.prototype = F.prototype;
+ 
+ 
+ 
+ 
+

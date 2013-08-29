@@ -37,6 +37,6 @@ function merge(arr1, arr2) {
 	return res;
 }
 
-arr = [7,6,5,4,3,2,1];
+arr = [5,4,3,2,1];
 console.log(arr);
 console.log(mergeSort(arr));

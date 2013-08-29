@@ -1,0 +1,1558 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0089)http://www.ibm.com/developerworks/web/library/wa-aj-wicket/?S_TACT=105AGY82&S_CMP=GENSITE -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta http-equiv="Cache-control" content="no-cache">
+<title>Wicket: A simplified framework for building and testing dynamic Web
+    pages</title>
+<meta http-equiv="PICS-Label" content="(PICS-1.1 &quot;http://www.icra.org/ratingsv02.html&quot; l gen true r (cz 1 lz 1 nz 1 oz 1 vz 1) &quot;http://www.rsac.org/ratingsv01.html&quot; l gen true r (n 0 s 0 v 0 l 0) &quot;http://www.classify.org/safesurf/&quot; l gen true r (SS~~000 1))">
+<link rel="schema.DC" href="http://purl.org/DC/elements/1.0/">
+<link rel="SHORTCUT ICON" href="http://www.ibm.com/favicon.ico">
+<meta name="Owner" content="developerWorks Content/Raleigh/IBM">
+<meta name="DC.Language" scheme="rfc1766" content="en">
+<meta name="IBM.Country" content="ZZ">
+<meta name="Security" content="Public">
+<meta name="IBM.SpecialPurpose" content="SP001">
+<meta name="IBM.PageAttributes" content="sid=1003,1004">
+<meta name="Source" content="v16 Template Generator">
+<meta name="Robots" content="index,follow">
+<meta name="Abstract" content="Wicket provides an object-oriented approach toward developing dynamic Web-based UI applications. Because Wicket is pure Java and HTML code, you can leverage your knowledge of Java programming to write applications based on Wicket, dramatically reducing your development time. This article gives you an overview of Wicket and describes how you can use Wicket to rapidly build Web-based applications in a non-intrusive and simplified way.">
+<meta name="Description" content="Wicket provides an object-oriented approach toward developing dynamic Web-based UI applications. Because Wicket is pure Java and HTML code, you can leverage your knowledge of Java programming to write applications based on Wicket, dramatically reducing your development time. This article gives you an overview of Wicket and describes how you can use Wicket to rapidly build Web-based applications in a non-intrusive and simplified way.">
+<meta name="Keywords" content="Wicket, Framework, developerWorks, developerworks, AJAX, Ajax,     object-oriented programming, object-oriented, frameworks, application development, tttwaca">
+<meta name="DC.Date" scheme="iso8601" content="2008-11-04">
+<meta name="DC.Type" scheme="IBM_ContentClassTaxonomy" content="CT316">
+<meta name="DC.Subject" scheme="IBM_SubjectTaxonomy" content="TTA00">
+<meta scheme="IBM_WTMCategory" name="IBM.WTMCategory" content="SOFDCDEVZZ">
+<meta name="DC.Rights" content="© Copyright IBM Corporation 2008">
+<meta name="IBM.Effective" scheme="W3CDTF" content="2008-11-04">
+<meta name="title" content="Wicket: A simplified framework for building and testing dynamic Web
+    pages">
+
+<!-- HEADER_SCRIPTS_AND_CSS_INCLUDE -->
+<link href="./Wicket  A simplified framework for building and testing dynamic Web pages_files/all.css" media="all" rel="stylesheet" title="www" type="text/css">
+<link href="./Wicket  A simplified framework for building and testing dynamic Web pages_files/screen.css" media="screen,projection" rel="stylesheet" title="www" type="text/css">
+<link href="./Wicket  A simplified framework for building and testing dynamic Web pages_files/screen-uas.css" media="screen,projection" rel="stylesheet" title="www" type="text/css">
+<link href="./Wicket  A simplified framework for building and testing dynamic Web pages_files/screen-fonts.css" media="screen,projection" rel="stylesheet" title="www" type="text/css">
+<link href="./Wicket  A simplified framework for building and testing dynamic Web pages_files/handheld.css" media="handheld" rel="stylesheet" title="www" type="text/css">
+<link href="./Wicket  A simplified framework for building and testing dynamic Web pages_files/print.css" media="print" rel="stylesheet" title="www" type="text/css">
+<link href="./Wicket  A simplified framework for building and testing dynamic Web pages_files/overlay.css" media="screen,projection" rel="stylesheet" title="www" type="text/css">
+<!-- dW-specific CSS -->
+<link href="./Wicket  A simplified framework for building and testing dynamic Web pages_files/dw-screen.css" media="screen,projection" rel="stylesheet" title="www" type="text/css">
+<link href="./Wicket  A simplified framework for building and testing dynamic Web pages_files/dw-screen-comments-ratings-signin.css" media="screen,projection" rel="stylesheet" title="www" type="text/css">
+<link href="./Wicket  A simplified framework for building and testing dynamic Web pages_files/jquery.cluetip.css" media="screen,projection" rel="stylesheet" title="www" type="text/css">
+<!-- xM Masthead/Footer -->
+<link href="./Wicket  A simplified framework for building and testing dynamic Web pages_files/dw-mf2013-N.css" rel="stylesheet" title="www" type="text/css">
+<script src="./Wicket  A simplified framework for building and testing dynamic Web pages_files/ibmcommon.js" type="text/javascript">//</script><link rel="search" type="application/opensearchdescription+xml" href="http://www.ibm.com/search/opensearch/description.xml" title="IBM Search">
+<script src="./Wicket  A simplified framework for building and testing dynamic Web pages_files/dynamicnav.js" type="text/javascript">//</script>
+<!-- dW functional JS -->
+<script language="JavaScript" src="./Wicket  A simplified framework for building and testing dynamic Web pages_files/urltactic.js" type="text/javascript"></script>
+<!-- Rating_START -->
+<script language="JavaScript" src="./Wicket  A simplified framework for building and testing dynamic Web pages_files/showrating.js" type="text/javascript"></script>
+<style type="text/css">
+.metavalue {
+  display: none;
+}
+</style>
+<!-- Rating_END --><!-- RESERVED_HEADER_INCLUDE -->
+<script language="javascript" src="./Wicket  A simplified framework for building and testing dynamic Web pages_files/ajax1.js" type="text/javascript"></script>
+<script language="javascript" src="./Wicket  A simplified framework for building and testing dynamic Web pages_files/search_counter-maverick.js" type="text/javascript"></script>
+<script language="javascript" src="./Wicket  A simplified framework for building and testing dynamic Web pages_files/request_referer_capture-maverick.js" type="text/javascript"></script>
+<script language="JavaScript" type="text/javascript">
+ <!--
+ setDefaultQuery('');
+ //-->
+</script>
+<script language="JavaScript" type="text/javascript">
+ <!--
+ function openNewWindow(url,tar,arg){window.open(url,tar,arg);}
+ //-->
+</script>
+<!-- Include file support -->
+<script language="JavaScript" type="text/javascript">
+(function($) {
+	jQuery.extend({
+		getInc: function(u,d){
+			if(u==null)return;
+			jQuery.ajax({
+	    		type: "GET",
+			url: u,
+			dataType: "text",
+	        	success: function(t) {
+				jQuery(d).html(t);
+				ibmCommon.initShowHide(jQuery(d).children()[0]);			
+			},
+			async: true
+			});
+		}
+	});
+})(jQuery);
+</script>
+<script id="flashdetect" type="text/javascript" src="./Wicket  A simplified framework for building and testing dynamic Web pages_files/flash-detect.js" charset="UTF-8"></script><script id="mhMenu" type="text/javascript" src="./Wicket  A simplified framework for building and testing dynamic Web pages_files/usen-utf8.js" charset="UTF-8"></script><script id="wiBundle" type="text/javascript" src="./Wicket  A simplified framework for building and testing dynamic Web pages_files/Controller" charset="UTF-8"></script></head>
+
+<body id="ibm-com">
+<div id="ibm-top" class="ibm-landing-page">
+
+<!-- MASTHEAD_BEGIN -->
+<!-- MASTHEAD_BEGIN -->
+<div class="ibm-access"><a href="http://www.ibm.com/developerworks/web/library/wa-aj-wicket/?S_TACT=105AGY82&S_CMP=GENSITE#ibm-content">Skip to main content</a></div>
+<div id="ibm-masthead-dw">
+  
+    <!-- TOP ROW -->    
+    <div id="dw-masthead-top-row">
+        <ul id="ibm-mast-options-dw">
+			<li id="dw-mast-top-4">
+				<a href="http://www.ibm.com/developerworks/"><img src="./Wicket  A simplified framework for building and testing dynamic Web pages_files/dwn-dw-badge.png" width="43" height="22" alt="dW" aria-label="dW"></a>
+			</li>
+		    <li id="dw-mast-top-0" class="navtab">
+				<a class="" href="http://www.ibm.com/developerworks/dwwi/DWAuthRouter?m=loginpage&lang=en&d=http%3A%2F%2Fwww.ibm.com%2Fdeveloperworks%2Fweb%2Flibrary%2Fwa-aj-wicket%2F%3FS_TACT%3D105AGY82%26S_CMP%3DGENSITE" title="">Sign in (or register)</a>
+			</li>
+		    <li id="dw-mast-top-1" class="navtab">
+				<a href="http://www.ibm.com/developerworks/web/library/wa-aj-wicket/?S_TACT=105AGY82&S_CMP=GENSITE#SELECTLANG">English</a>
+			</li>
+			<li id="dw-mast-top-2" class="navtab dw-mf-hide">
+				<a href="http://www.ibm.com/developerworks/web/library/wa-aj-wicket/?S_TACT=105AGY82&S_CMP=GENSITE#">[userid]</a>
+			</li>
+			<li id="dw-mast-top-3" class="navtab">
+				<a href="http://www.ibm.com/developerworks/web/library/wa-aj-wicket/?S_TACT=105AGY82&S_CMP=GENSITE#">IBM</a>
+			</li>
+		</ul>
+	</div>
+    
+    <!-- TOP ROW SLIDER -->
+    <div id="ibm-my-menu-dw">    
+        <div class="ibm-ribbon-pane-dw">
+            <div class="ibm-ribbon-section-dw">
+                <!-- Sign-in -->
+				<div class="dw-mast-columns">                
+					<div class="dw-mast-col-1-1">
+						<div id="dw-mast-sso">
+							<div id="signin_error_mf" class="no-display"></div>
+							<div id="dw-mast-sso-form">
+								<form id="sForm_mf" action="" method="post" name="sForm_name_mf" onsubmit="return false;">
+									<div id="dw-mast-sso-id" class="dw-mast-sso-id-en">
+										<label for="ibmid_mf">IBM ID:</label>
+										<input id="ibmid_mf" type="text" value="" name="ibmid_name_mf" maxlength="100" onkeypress="handleEP(event,this.form,&#39;mf&#39;);" class="">
+									</div>
+									<div id="dw-mast-sso-pw" class="dw-mast-sso-pw-en">
+										<label for="pw_mf">Password:</label>
+										<input id="pw_mf" type="password" value="" name="pw_name_mf" maxlength="100" onkeypress="handleEP(event,this.form,&#39;mf&#39;);" class="">
+									</div>
+									<div id="dw-mast-sso-target" class="dw-mast-sso-target-en">
+										<p class="dw-mf-perm-box">
+											<input id="perm_mf" type="checkbox" name="perm_name_mf"><label for="perm_mf"> Keep me signed in.</label>
+										</p>
+									</div>					
+									<div id="dw-mast-sso-terms">
+										<p class="dw-mast-sso-terms-en">By clicking <strong>Submit</strong>, you agree to the <a href="https://www.ibm.com/developerworks/community/terms/">developerWorks terms of use</a>.</p>
+									</div>
+									<div>
+										<input class="dw-mf-submit-btn" name="ibm_submit_name_mf" value="Submit" onclick="signin(&#39;mf&#39;);return false;" type="submit">
+									</div>
+								</form>
+							</div>
+							<div id="dw-mast-sso-update">
+								<div id="dw-mast-sso-update-id">
+									<ul>
+										<li><a class="ibm-forward-link" href="http://www.ibm.com/developerworks/web/library/wa-aj-wicket/?S_TACT=105AGY82&S_CMP=GENSITE#" onclick="(function () {window.location=&#39;/developerworks/dwwi/DWAuthRouter?m=reg&amp;lang=en&amp;d=&#39;+encodeURIComponent(location.href);})();">Need an IBM ID?</a></li>
+										<li><a class="ibm-forward-link" href="http://www.ibm.com/developerworks/dwwi/jsp/WSHelp.jsp?lang=en_US">Forgot your IBM ID?</a></li>
+									</ul>
+								</div>
+								<div id="dw-mast-sso-update-pw">
+									<ul class="dw-mf-pwupdate">
+										<li><a class="ibm-forward-link" href="http://www.ibm.com/developerworks/web/library/wa-aj-wicket/?S_TACT=105AGY82&S_CMP=GENSITE#" onclick="(function () {window.location=&#39;https://www.ibm.com/account/profile?page=forgot&amp;lang=en_US&amp;appname=ibm&amp;required=null&amp;d=&#39;+encodeURIComponent(getAuthUrl())+&#39;%3Fm%3Dloginpage%26lang%3Den_US%26d%3D&#39;+encodeURIComponent(location.href);})();">Forgot your password?</a></li>
+										<li><a class="ibm-forward-link" href="http://www.ibm.com/developerworks/web/library/wa-aj-wicket/?S_TACT=105AGY82&S_CMP=GENSITE#" onclick="(function () {window.location=&#39;https://www.ibm.com/account/profile?page=chpw&amp;lang=en_US&amp;appname=ibm&amp;required=null&amp;d=&#39;+encodeURIComponent(location.href);})();">Change your password</a></li>
+									</ul>
+								</div>
+							</div>
+							<div id="dw-mast-sso-text">
+						<p>The first time you sign into developerWorks, a profile is created for you.  <strong>Select information in your profile (name, country/region, and company) is displayed to the public and will accompany any content you post</strong>.  You may update your IBM account at any time.</p>
+								<p class="dw-mf-secure">All information submitted is secure.</p>
+							</div>
+							<div class="dw-mast-close">
+								<ul>
+									<li><div class="dw-mast-close-sign"><a href="http://www.ibm.com/developerworks/web/library/wa-aj-wicket/?S_TACT=105AGY82&S_CMP=GENSITE#"><img src="./Wicket  A simplified framework for building and testing dynamic Web pages_files/c.gif" alt="Close [x]" width="20" height="10" border="0"></a></div></li>
+								</ul>
+							</div>							
+						</div>                    
+						<div id="dw-mast-dname" class="dw-mf-hide">
+							<p>The first time you sign in to developerWorks, a profile is created for you, so you need to choose a display name.  Your display name accompanies the content you post on developerworks.</p><p><strong>Please choose a display name between 3-31 characters</strong>.  Your display name must be unique in the developerWorks community and should not be your email address for privacy reasons.</p>
+							<div id="signin_dname_error_mf" class="no-display"></div>
+							<div id="dw-mast-dname-form">
+								<form id="dForm_mf" action="" method="post" name="dForm_name_mf" onsubmit="return false;">
+									<div id="dw-mast-dname-mf">
+										<label for="dname_mf">Display name:</label>
+										<input id="dname_mf" name="dname_name_mf" maxlength="31" size="25" value="" type="text" onkeypress="handleEP(event,this.form,&#39;mf&#39;);">
+									</div>
+									<div id="dw-mast-dname-terms">
+										<p>By clicking <strong>Submit</strong>, you agree to the <a href="https://www.ibm.com/developerworks/community/terms/">developerWorks terms of use</a>.</p>
+									</div>
+									<div>
+										<input class="dw-mf-submit-btn" name="dname_submit_name_mf" value="Submit" onclick="signin(&#39;mf&#39;);return false;" type="submit">
+									</div>
+								</form>								
+							</div>
+							<div id="dw-mast-dname-secure">
+								<p class="dw-mf-secure">All information submitted is secure.</p>
+							</div>
+							<div class="dw-mast-close">
+								<ul>
+									<li><div class="dw-mast-close-sign"><a href="http://www.ibm.com/developerworks/web/library/wa-aj-wicket/?S_TACT=105AGY82&S_CMP=GENSITE#"><img src="./Wicket  A simplified framework for building and testing dynamic Web pages_files/c.gif" alt="Close [x]" width="20" height="10" border="0"></a></div></li>
+								</ul>
+							</div>							
+						</div>
+						<div id="dw-mast-auth" class="dw-mf-hide">
+							<div>
+								<h2>My developerWorks:</h2>
+								<ul>
+									<li><a id="dw-mast-top-0-0" href="http://www.ibm.com/developerworks/community/homepage/web/updates/?lang=en">My home</a></li>
+									<li><a href="http://www.ibm.com/developerworks/community/profiles/html/myProfileView.do?lang=en">My profile</a></li>
+									<li><a href="http://www.ibm.com/developerworks/community/groups/service/html/mycommunities?lang=en">My communities</a></li>
+									<li><a href="http://www.ibm.com/developerworks/community/news">Settings</a></li>
+								</ul>     
+							</div>
+							<div id="dw-mast-notify" class="dw-mf-hide">
+								<h2>My notifications:</h2>
+								<ul>
+									<li><a id="new_notify" href="http://www.ibm.com/developerworks/community/homepage?lang=en">{[num_notify] new notifications}([num_notify] new notification)</a></li>
+									<li><a id="new_invite" href="http://www.ibm.com/developerworks/community/profiles/html/wc.do?action=in&requireAuth=true&widgetId=friends&lang=[lang]">{[num_invite] network requests}([num_invite] network request)</a></li>  
+								</ul>
+							</div>
+							<div class="dw-mast-more">
+								<ul class="ibm-link-list">
+									<li><a class="dw-more-link" href="http://www.ibm.com/developerworks/web/library/wa-aj-wicket/?S_TACT=105AGY82&S_CMP=GENSITE#" onclick="signOut(); return false;"><strong>Sign out</strong></a></li>
+								</ul>
+							</div>		
+							<div class="dw-mast-close">
+								<ul>
+									<li><div class="dw-mast-close-sign"><a href="http://www.ibm.com/developerworks/web/library/wa-aj-wicket/?S_TACT=105AGY82&S_CMP=GENSITE#"><img src="./Wicket  A simplified framework for building and testing dynamic Web pages_files/c.gif" alt="Close [x]" width="20" height="10" border="0"></a></div></li>
+								</ul>
+							</div>							
+						</div>						
+					</div>                   
+                </div>
+                <!-- Language selector --> 
+				<div class="dw-mast-columns">
+					<div class="dw-mast-col-2-1">
+						<h2>Select a language:</h2>
+						<ul>
+							<li><a id="dw-mast-top-1-0" href="http://www.ibm.com/developerworks/">English</a></li>
+							<li><a href="http://www.ibm.com/developerworks/cn/">中文</a></li>
+							<li><a href="http://www.ibm.com/developerworks/jp/">日本語</a></li>
+							<li><a href="http://www.ibm.com/developerworks/ru/">Русский</a></li>
+						</ul>
+					</div>
+					<div class="dw-mast-col-2-2">
+						<ul>
+							<li><a href="http://www.ibm.com/developerworks/br/">Português (Brasil)</a></li>
+							<li><a href="http://www.ibm.com/developerworks/ssa/">Español</a></li>
+							<li><a href="http://www.ibm.com/developerworks/vn/">Việt</a></li>
+						</ul>
+					</div>
+					<div class="dw-mast-close">
+						<ul>
+							<li><div class="dw-mast-close-lang"><a href="http://www.ibm.com/developerworks/web/library/wa-aj-wicket/?S_TACT=105AGY82&S_CMP=GENSITE#"><img src="./Wicket  A simplified framework for building and testing dynamic Web pages_files/c.gif" alt="Close [x]" width="20" height="10" border="0"></a></div></li>
+						</ul>
+                    </div>
+                </div>                
+                <div class="dw-mast-columns"><!-- Authenticated --></div>
+                <!-- IBM -->
+				<div class="dw-mast-columns">
+					<div class="dw-mast-col-2-1">
+						<ul>
+							<li><a id="dw-mast-top-3-0" href="http://www.ibm.com/">IBM home</a></li>
+							<li><a href="http://www.ibm.com/solutions/">Industries &amp; solutions</a></li>
+							<li><a href="http://www.ibm.com/technologyservices/">Services</a></li>
+							<li><a href="http://www.ibm.com/products/">Products</a></li>
+							<li><a href="http://www.ibm.com/support/">Support &amp; downloads</a></li>
+						</ul>
+					</div>
+					<div class="dw-mast-col-2-2 dw-mast-ibm">
+						<ul>
+							<li><a href="http://www.ibm.com/support/publications/us/library/index.shtml">Product information</a></li>
+							<li><a href="http://www.ibm.com/redbooks/">Redbooks</a></li>
+							<li><a href="http://www.ibm.com/software/">Software</a></li>
+							<li><a href="http://www.ibm.com/software/sw-services/">Software services</a></li>
+						</ul>
+					</div>
+					<div class="dw-mast-close">
+						<ul>
+							<li><div class="dw-mast-close-ibm"><a href="http://www.ibm.com/developerworks/web/library/wa-aj-wicket/?S_TACT=105AGY82&S_CMP=GENSITE#"><img src="./Wicket  A simplified framework for building and testing dynamic Web pages_files/c.gif" alt="Close [x]" width="20" height="10" border="0"></a></div></li>
+						</ul>
+                    </div>
+				</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- BOTTOM ROW -->
+    <div id="ibm-universal-nav-dw">
+        <ul id="ibm-unav-links-dw">
+            <li id="ibm-unav-home-dwlogo">
+				<a href="http://www.ibm.com/developerworks/"><img src="./Wicket  A simplified framework for building and testing dynamic Web pages_files/dwn-dw-wordmark.png" width="225" height="28" alt="developerWorks®"></a>
+            </li>
+        </ul>
+        <ul id="ibm-menu-links-dw">
+            <li id="dw-mast-nav-0"><a href="http://www.ibm.com/developerworks/topics/">Technical topics</a></li>
+            <li id="dw-mast-nav-1"><a href="http://www.ibm.com/developerworks/downloads/">Evaluation software</a></li>
+            <li id="dw-mast-nav-2"><a href="http://www.ibm.com/developerworks/community/index.html">Community</a></li>
+            <li id="dw-mast-nav-3"><a href="http://www.ibm.com/developerworks/events/">Events</a></li>
+        </ul>
+			<form id="ibm-search-form-dw" action="http://www.ibm.com/search/csass/search/" method="get" name="form1">
+				<p>
+				<label for="q"><span class="ibm-access">Search developerWorks</span></label>
+				<input id="q" type="text" name="q" value="Search developerWorks" maxlength="100">
+				<input type="hidden" name="sn" value="dw">
+				<input type="hidden" name="lang" value="en">
+				<input type="hidden" name="cc" value="US">
+				<input type="hidden" name="en" value="utf">
+				<input type="hidden" name="hpp" value="20">
+				<input type="hidden" name="dws" value="dw">
+				<input id="ibm-search-dw" class="ibm-btn-search-dw" type="submit" value="Search">
+				</p>
+			</form>
+    </div>
+    
+    <!-- BOTTOM ROW SLIDER -->
+    <div id="ibm-common-menu-dw">
+        <div class="ibm-ribbon-pane-dw dw-ribbon-pane-en">
+            <div class="ibm-ribbon-section-dw">
+				<!-- Technical topics category -->
+                <div class="dw-mast-columns">
+					<div class="dw-mast-col-5-1">
+						<h2><a id="dw-mast-nav-0-0" href="http://www.ibm.com/developerworks/topics/">Technical topics</a></h2>
+						<ul>
+							<li><a href="http://www.ibm.com/developerworks/agile/">Agile transformation</a></li>
+							<li><a href="http://www.ibm.com/developerworks/aix/">AIX and UNIX</a></li>
+							<li><a href="http://www.ibm.com/developerworks/bigdata/">Big data</a></li>
+							<li><a href="http://www.ibm.com/developerworks/analytics/">Business analytics</a></li>
+							<li><a href="http://www.ibm.com/developerworks/bpm/">Business process management</a></li>
+						</ul>     
+                    </div>
+					<div class="dw-mast-col-5-2">
+						<ul>
+							<li><a href="http://www.ibm.com/developerworks/cloud/">Cloud computing</a></li>
+							<li><a href="http://www.ibm.com/developerworks/commerce/">Commerce</a></li>
+							<li><a href="http://www.ibm.com/developerworks/ibmi/">IBM i</a></li>    
+							<li><a href="http://www.ibm.com/developerworks/industry/">Industries</a></li>
+							<li><a href="http://www.ibm.com/developerworks/data/">Information management</a></li>
+						</ul>
+                    </div>
+					<div class="dw-mast-col-5-3">
+						<ul>
+							<li><a href="http://www.ibm.com/developerworks/java/">Java technology</a></li>
+							<li><a href="http://www.ibm.com/developerworks/linux/">Linux</a></li>
+							<li><a href="http://www.ibm.com/developerworks/lotus/">Lotus (collaboration)</a></li>
+							<li><a href="http://www.ibm.com/developerworks/mobile/">Mobile development</a></li>
+							<li><a href="http://www.ibm.com/developerworks/opensource/">Open source</a></li>
+						</ul>     
+                    </div>
+                    <div class="dw-mast-col-5-4">
+						<ul>
+							<li><a href="http://www.ibm.com/developerworks/rational/">Rational</a></li>
+							<li><a href="http://www.ibm.com/developerworks/security/">Security</a></li>
+							<li><a href="http://www.ibm.com/developerworks/servicemanagement/">Tivoli (service management)</a></li>
+							<li><a href="http://www.ibm.com/developerworks/web/">Web development</a></li>
+							<li><a href="http://www.ibm.com/developerworks/websphere/">WebSphere</a></li>
+						</ul> 
+                    </div>
+                    <div class="dw-mast-col-5-5">
+						<ul>
+							<li><a href="http://www.ibm.com/developerworks/library/"><strong>Technical library</strong></a></li>
+							<li><a href="http://www.ibm.com/developerworks/products/"><strong>Products A to Z</strong></a></li>
+						</ul>
+                    </div>
+                    <div class="dw-mast-close">
+						<ul>
+							<li><div class="dw-mast-close-tech"><a href="http://www.ibm.com/developerworks/web/library/wa-aj-wicket/?S_TACT=105AGY82&S_CMP=GENSITE#"><img src="./Wicket  A simplified framework for building and testing dynamic Web pages_files/c.gif" alt="Close [x]" width="20" height="10" border="0"></a></div></li>
+						</ul>
+                    </div>
+				</div>
+				<!-- Evaluation software category -->
+                <div class="dw-mast-columns">
+					<div class="dw-mast-col-2-1">
+						<h2><a id="dw-mast-nav-1-0" href="http://www.ibm.com/developerworks/downloads/">Evaluation software</a></h2>
+						<ul>
+							<li><a href="http://www.ibm.com/developerworks/downloads/#ba">Business analytics</a></li>
+							<li><a href="http://www.ibm.com/developerworks/downloads/#data">Information management</a></li>
+							<li><a href="http://www.ibm.com/developerworks/downloads/#lotus">Lotus (collaboration)</a></li>
+							<li><a href="http://www.ibm.com/developerworks/downloads/#rational">Rational</a></li>
+						</ul>            
+                    </div>
+					<div class="dw-mast-col-2-2">
+						<ul>
+							<li><a href="http://www.ibm.com/developerworks/downloads/#tivoli">Tivoli (service management)</a></li>
+							<li><a href="http://www.ibm.com/developerworks/downloads/#websphere">WebSphere</a></li>
+							<li><a href="http://www.ibm.com/developerworks/downloads/#more">More IBM products (Mobile, PureSystems, Security...)</a></li>
+						</ul>            
+                    </div>
+                    <div class="dw-mast-close">
+						<ul>
+							<li><div class="dw-mast-close-eval"><a href="http://www.ibm.com/developerworks/web/library/wa-aj-wicket/?S_TACT=105AGY82&S_CMP=GENSITE#"><img src="./Wicket  A simplified framework for building and testing dynamic Web pages_files/c.gif" alt="Close [x]" width="20" height="10" border="0"></a></div></li>
+						</ul>
+                    </div>
+				</div>
+				<!-- Community category -->
+                <div class="dw-mast-columns">
+					<div class="dw-mast-col-3-1">
+						<h2><a id="dw-mast-nav-2-0" href="http://www.ibm.com/developerworks/community/index.html">Community</a></h2>
+						<ul>
+							<li><a href="http://www.ibm.com/developerworks/community/homepage/?lang=en">My home</a></li>
+							<li><a href="http://www.ibm.com/developerworks/community/profiles/?lang=en">Profiles</a></li>
+							<li><a href="http://www.ibm.com/developerworks/community/groups/?lang=en">Communities</a></li>
+						</ul>     
+                    </div>
+					<div class="dw-mast-col-3-2">
+						<ul>
+							<li><a href="http://www.ibm.com/developerworks/community/blogs/?lang=en">Blogs</a></li>
+							<li><a href="http://www.ibm.com/developerworks/community/forums/?lang=en">Forums</a></li>
+							<li><a href="http://www.ibm.com/developerworks/community/wikis/?lang=en">Wikis</a></li>
+						</ul>
+                    </div>
+					<div class="dw-mast-col-3-3 dw-mast-col-3-3-en">
+						<ul>
+							<li><a href="http://www.ibm.com/developerworks/community/activities/?lang=en">Activities</a></li>
+							<li><a href="https://www.ibm.com/developerworks/community/podcasts/?lang=en">Podcasts</a></li>    
+							<li><a href="http://www.ibm.com/developerworks/champion/">IBM Champion program</a></li>
+						</ul>
+                    </div>
+                    <div class="dw-mast-close">
+						<ul>
+							<li><div class="dw-mast-close-comm"><a href="http://www.ibm.com/developerworks/web/library/wa-aj-wicket/?S_TACT=105AGY82&S_CMP=GENSITE#"><img src="./Wicket  A simplified framework for building and testing dynamic Web pages_files/c.gif" alt="Close [x]" width="20" height="10" border="0"></a></div></li>
+						</ul>
+                    </div>
+				</div>
+				<!-- Events category -->
+                <div class="dw-mast-columns">
+					<div class="dw-mast-col-1-1">
+						<h2><a id="dw-mast-nav-3-0" href="http://www.ibm.com/developerworks/events/">Events</a></h2>
+						<ul>
+							<li><a href="http://www.ibm.com/developerworks/find/webcasts/">Webcasts</a></li>
+							<li><a href="http://www.ibm.com/developerworks/find/events/">Find events (webcasts, conferences...)</a></li>
+						</ul>            
+                    </div>
+                    <div class="dw-mast-close">
+						<ul>
+							<li><div class="dw-mast-close-event"><a href="http://www.ibm.com/developerworks/web/library/wa-aj-wicket/?S_TACT=105AGY82&S_CMP=GENSITE#"><img src="./Wicket  A simplified framework for building and testing dynamic Web pages_files/c.gif" alt="Close [x]" width="20" height="10" border="0"></a></div></li>
+						</ul>
+                    </div>
+				</div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+<div id="fdiv" class="ibm-access"><embed type="application/x-shockwave-flash" src="https://www.ibm.com/developerworks/js/dw-mf/connect.swf" width="1" height="1" id="sflash" name="sflash" quality="high" menu="false" wmode="window" movie="https://www.ibm.com/developerworks/js/dw-mf/connect.swf" swliveconnect="true" allowscriptaccess="always"></div>
+<!-- MASTHEAD_END --><!-- MASTHEAD_END -->
+
+<div id="ibm-pcon">
+
+<!-- CONTENT_BEGIN -->
+<div id="ibm-content">
+
+<!-- Navigation_Trail_BEGIN -->
+<!-- &nbsp; -->
+      <div id="ibm-content-head"><ul id="ibm-navigation-trail"><li class="ibm-first"><a href="http://www.ibm.com/developerworks/">developerWorks</a></li><li><a href="http://www.ibm.com/developerworks/web/">Web development</a></li><li><a href="http://www.ibm.com/developerworks/views/web/library.jsp">Technical library</a></li></ul></div>
+<!-- Navigation_Trail_END -->
+
+<!-- dW_Summary Area_START -->
+<div id="dw-summary-article">
+
+<div class="dw-content-head">
+<h1>Wicket: A simplified framework for building and testing dynamic Web
+    pages</h1><p>
+</p></div>
+
+<div class="ibm-container-body ibm-two-column">
+
+<div class="ibm-column ibm-first">
+<div class="author"><a class="dwauthor" rel="#authortip1" href="http://www.ibm.com/developerworks/web/library/wa-aj-wicket/?S_TACT=105AGY82&S_CMP=GENSITE#author1">Kumarsun Nadar</a> (<a href="mailto:kumarsun.nadar@in.ibm.com?subject=Wicket:%20A%20simplified%20framework%20for%20building%20and%20testing%20dynamic%20Web%20%20%20%20pages">kumarsun.nadar@in.ibm.com</a>), Senior Staff Software Engineer, 				IBM	</div><div id="authortip1" class="dwauthor-onload-state ibm-no-print" style="display: none;"><div class="position"><img src="./Wicket  A simplified framework for building and testing dynamic Web pages_files/p-knadar.jpg" width="64" height="80" alt="Photo of Kumarsun"></div>Kumarsun Nadar currently works as a Senior Staff Software Engineer with IBM India Software
+        Labs (ISL) in the WebSphere Business Service Fabric product team, based out of
+        Mumbai, India. As part of this team, he was involved in the UI development of the Fabric Web
+        Tools module, which was based on the Wicket framework. He has attained SUN Microsystems
+        certifications in SCJP, SCWCD and SCBCD and has experience in various client- and
+        server-side
+        technologies such as Wicket, EJB, Hibernate, Struts and so on, based on the Java/J2EE platform. His
+        hobbies include watching, as well as playing, sports such as Cricket, and TT.</div>
+<p></p>
+<p><strong>Summary:</strong>&nbsp; Wicket provides an object-oriented approach toward
+      developing dynamic Web-based UI applications. Because Wicket is pure Java™
+            and HTML code, you can
+      leverage your knowledge about Java to write applications based on Wicket, dramatically
+      reducing your development time. This article gives you an overview of Wicket and describes how you can use
+      Wicket to rapidly build Web-based applications in a
+        non-intrusive and simplified way.</p>
+
+</div>
+
+<div class="ibm-column ibm-second">
+<p class="leading"><b>Date:</b>&nbsp; 04 Nov  2008
+<br><b>Level: </b>&nbsp;Intermediate
+<br class="ibm-ind-link"><b>PDF:</b>&nbsp; <a href="http://download.boulder.ibm.com/ibmdl/pub/software/dw/ajax/wa-aj-wicket/wa-aj-wicket-pdf.pdf">A4 and Letter</a> (45KB)<a class="ibm-external-link" href="http://www.adobe.com/products/acrobat/readstep2.html">Get Adobe® Reader®</a>
+<br><strong>Also available in:&nbsp;</strong>
+&nbsp;<a href="http://www.ibm.com/developerworks/cn/web/wa-aj-wicket/">Chinese</a>
+
+
+&nbsp;<a href="http://www.ibm.com/developerworks/jp/web/library/wa-aj-wicket/">Japanese</a> 
+
+
+
+<br>
+<br><strong>Activity:</strong>&nbsp; 79967 views
+<br><strong>Comments:</strong> &nbsp; <span id="nCmts">4&nbsp;(<a class="dw-view-comment" href="http://www.ibm.com/developerworks/web/library/wa-aj-wicket/?S_TACT=105AGY82&S_CMP=GENSITE#icomments">View</a>&nbsp;|&nbsp;<a onclick="showSignIn();return false;" href="http://www.ibm.com/developerworks/web/library/wa-aj-wicket/?S_TACT=105AGY82&S_CMP=GENSITE#">Add comment</a> - Sign in)</span>
+<!-- Rating_Area_Begin -->
+</p><div id="art-rating-summary"><img alt="Average rating 4 stars based on 162 votes" src="./Wicket  A simplified framework for building and testing dynamic Web pages_files/stars120x20-4b.jpg" class="dw-avg-rating"> Average rating (162 votes)<br><a class="dw-view-comment" href="http://www.ibm.com/developerworks/web/library/wa-aj-wicket/?S_TACT=105AGY82&S_CMP=GENSITE#iratings">Rate this article</a></div>
+<!-- Rating_Area_End -->
+<p></p>
+</div>
+
+</div>
+</div>
+<!-- dW_Summary_Area_END -->
+
+<!-- CONTENT_BODY -->
+<div id="ibm-content-body">
+
+<!-- MAIN_COLUMN_BEGIN -->
+<div id="ibm-content-main">
+
+<!-- Related_Searches_Area -->
+<!-- Related_Searches_Area_Begin -->
+<script type="text/javascript" language="javascript">
+	     capture_referrer();
+</script>
+
+<div id="dw-related-searches-article" style="display:none">
+<div class="ibm-container ibm-alternate-two">
+<div class="ibm-container-body">
+
+<!--  START : HTML FOR ARTICLE SEARCH -->
+  <div id="article_results" style="display:block"></div>
+<!--  END : HTML FOR ARTICLE SEARCH -->
+
+</div>
+</div>
+</div>
+<!-- Related_Searches_Area_End -->
+<!-- MAIN_COLUMN_CONTAINER_BEGIN -->
+<div class="ibm-container">
+
+<!-- MAIN_COLUMN_CONTENT_BEGIN -->
+<p><a name="overview"><span class="atitle">Overview</span></a></p><p>
+        Wicket is a recently launched Java Web development framework. It's an open
+        source, lightweight, component-based framework, which puts it in an altogether different
+        league from some of the earlier ways of developing Web-based applications. Wicket strives
+        for a clean separation between the roles of HTML page designer and Java developer by
+        supporting plain HTML-based templates that can be built using any WYSIWYG HTML
+        design tools. The templates can then be made dynamic with little modification.</p><p>Like other frameworks, Wicket
+        is built on top of Sun Microsystems' servlet API. However, unlike frameworks based
+        on the Model-View-Controller (MVC) model (such as Struts), Wicket takes away from
+        you the task of handling request/response objects, which is inherent with
+        technologies such as servlets. By taking away this task, Wicket allows you to concentrate on the application's business logic.</p><p>As a Wicket developer, you should think in terms of building reusable
+        components that are stateful, instead of building controllers that handle
+        request/response objects
+        and worrying about multithreading issues. Instead of creating a controller or action class,
+        you create a page, place components on it, and define how each component reacts
+        to user input. </p><p><a name="helloworld"><span class="atitle">HelloWorld example</span></a></p><p> To truly demonstrate the simplicity of developing Web-based
+        applications using Wicket, you'll start by developing a simple "Hello World"
+        example. Developing a dynamic page in Wicket generally involves creating the following two artifacts:</p><ul><li>HTML template</li><li>Java page class</li></ul><div class="ibm-container dw-container-sidebar ibm-alternate-two"><div class="ibm-container-body"><p><b>Wicket's Java page class</b></p><p>The Java page class is a Wicket convention, and should not be confused with JavaServer
+    Pages (JSP).  In this context, the Java page class is merely the Java code that
+    handles dynamic content for a Web page.  In the example, it is the HelloWorld.java that corresponds with HelloWorld.html.</p></div></div><p><b>Note</b>: You must ensure that the actual HTML file and the page class name
+        are the same (for example, HelloWorld.html and HelloWorld.java) and that both are in the same place
+        on the CLASSPATH. As a best practice, both can be placed in the same directory. </p><p><a name="htmlTemplate"><span class="smalltitle">HTML template (HelloWorld.html)</span></a></p><p>Listing 1 shows the template file for the HelloWorld example. </p><br><a name="listing1"><b>Listing 1. HelloWorld.html</b></a><br><table width="100%" cellpadding="0" cellspacing="0" border="0"><tbody><tr><td class="code-outline"><pre class="displaycode">&lt;html&gt;
+	&lt;head&gt;&lt;script type="text/javascript" &gt;&lt;/script&gt;&lt;/head&gt;
+	&lt;body bgcolor="#FFCC00"&gt;
+		&lt;H1 align="center"&gt;
+			&lt;span <strong>wicket:id="message"</strong>&gt;Hello World Using Wicket!&lt;/span&gt;
+		&lt;/H1&gt;
+	&lt;/body&gt;
+&lt;/html&gt;
+</pre></td></tr></tbody></table><br><p>To make a dynamic Web page, you need to identify the sections of the page that
+        are dynamic and tell Wicket to render those sections using a component. Because in
+        Listing 1 I want to keep the message dynamic, I have used the span element to mark
+        the component and the <code>wicket:id</code> attribute to identify the
+        component.</p><p><a name="pageClass"><span class="smalltitle">Java page class (HelloWorld.java)</span></a></p><p>Listing 2 shows the page class for the HelloWorld.java example. </p><br><a name="listing2"><b>Listing 2. HelloWorld.java</b></a><br><table width="100%" cellpadding="0" cellspacing="0" border="0"><tbody><tr><td class="code-outline"><pre class="displaycode">package myPackage;
+
+import org.apache.wicket.markup.html.WebPage;
+import org.apache.wicket.markup.html.basic.Label;
+
+public class HelloWorld extends WebPage
+{
+   	public HelloWorld()
+	   {
+		      add(new Label(<strong>"message"</strong>, "Hello World using Wicket!!"));
+	   }
+}
+</pre></td></tr></tbody></table><br><p>The ID given for the label component in the page class (<code>"message"</code>) must
+        match with the Wicket ID of the element in the template file (<code>wicket:id="message"</code>).
+        Wicket's Java page class contains all the dynamic behavior of a Web page. There is
+        a one-to-one relationship between an HTML template and a page class. </p><p>Finally, you need to create an <code>Application</code>
+                object that serves as a starting point when the application is loaded
+        by a Web container.  It is also a place to do initial settings and configuration for the
+        application. For example, you can define the home page for your application by
+        overriding the <code>getHomePage()</code> method and returning the page class corresponding to your
+        application's home page, as shown in Listing 3. </p><br><a name="listing3"><b>Listing 3. HelloWorldApplication.java</b></a><br><table width="100%" cellpadding="0" cellspacing="0" border="0"><tbody><tr><td class="code-outline"><pre class="displaycode">package myPackage;
+
+import org.apache.wicket.protocol.http.WebApplication;
+
+public class HelloWorldApplication extends WebApplication {
+
+	   protected void init() {
+   	}
+
+	   public Class getHomePage() {
+		      return HelloWorld.class;
+   	}
+}
+</pre></td></tr></tbody></table><br><p>You can also modify or override the default application settings by
+                overriding the <code>init()</code> method and then calling <code>getXXXSettings()</code> to retrieve an interface to a mutable <code>Settings</code>
+        object. The interfaces are returned by the methods shown in Table 1 and can be used to configure
+        framework settings for your application: </p><p> Table 1 shows a sample list of settings that can be applied at an
+                application-wide level in the <code>Application</code> class.</p><br><a name="table1"><b>Table 1. Application-wide settings</b></a><br><table border="0" cellpadding="0" cellspacing="0" class="ibm-data-table" summary="Application-wide settings" width="100%"><tbody><tr><th scope="col">Method</th><th scope="col">Used for</th></tr><tr><th class="tb-row" scope="row">getApplicationSettings</th><td>Application's application-wide settings</td></tr><tr><th class="tb-row" scope="row">getDebugSettings</th><td>Application's debug-related settings</td></tr><tr><th class="tb-row" scope="row">getExceptionSettings</th><td>Application's exception handling settings</td></tr><tr><th class="tb-row" scope="row">getMarkupSettings</th><td>Application's markup-related settings</td></tr><tr><th class="tb-row" scope="row">getPageSettings</th><td>Application's page-related settings</td></tr><tr><th class="tb-row" scope="row">getRequestCycleSettings</th><td>Application's request cycle-related settings</td></tr><tr><th class="tb-row" scope="row">getSecuritySettings</th><td>Application's security-related settings</td></tr><tr><th class="tb-row" scope="row">getSessionSettings</th><td>Application's session-related settings</td></tr></tbody></table><br><p> Table 2 shows some examples of how to apply an application-wide setting in the
+      <code>Application</code> class.</p><br><a name="table2"><b>Table 2. Examples of application-wide settings.</b></a><br><table border="0" cellpadding="0" cellspacing="0" class="ibm-data-table" summary="Examples of application-wide settings" width="100%"><tbody><tr><th scope="col">Example</th><th scope="col">Does this</th></tr><tr><th class="tb-row" scope="row">getApplicationSettings().setPageExpiredErrorPage(&lt;Page
+            class&gt;)</th><td>Defines the generic page to be displayed in case a page expires because of
+              a session timeout</td></tr><tr><th class="tb-row" scope="row">getMarkupSettings().setDefaultMarkupEncoding("UTF-8")</th><td>Sets the markup format to be used for rendering</td></tr><tr><th class="tb-row" scope="row">getSecuritySettings().setAuthorizationStrategy(&lt;IAuthorizationStrategy
+            Instance&gt;)</th><td>Sets the authorization strategy to be used for your application</td></tr></tbody></table><br><p><a name="webXML"><span class="smalltitle">web.xml configuration file</span></a></p><p>As a last step, to load your application and have it available, you need to define the
+      Wicket servlet class, passing it the application class name as a parameter in the web.xml
+      configuration file, as shown in Listing 4.</p><br><a name="listing4"><b>Listing 4. web.xml configuration file</b></a><br><table width="100%" cellpadding="0" cellspacing="0" border="0"><tbody><tr><td class="code-outline"><pre class="displaycode">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE web-app
+      PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+      "http://java.sun.com/dtd/web-app_2_3.dtd"&gt;
+
+&lt;web-app&gt;
+	&lt;display-name&gt;Wicket Hello World Example&lt;/display-name&gt;
+	&lt;servlet&gt;
+		&lt;servlet-name&gt;HelloWorldApplication&lt;/servlet-name&gt;
+		&lt;servlet-class&gt;
+			wicket.protocol.http.WicketServlet
+		&lt;/servlet-class&gt;
+		&lt;init-param&gt;
+			&lt;param-name&gt;<strong>applicationClassName</strong>&lt;/param-name&gt;
+			&lt;param-value&gt;<strong>myPackage.HelloWorldApplication</strong>&lt;/param-value&gt;
+		&lt;/init-param&gt;
+	&lt;/servlet&gt;
+	&lt;servlet-mapping&gt;
+		&lt;servlet-name&gt;HelloWorldApplication&lt;/servlet-name&gt;
+		&lt;url-pattern&gt;/hello/*&lt;/url-pattern&gt;
+	&lt;/servlet-mapping&gt;
+&lt;/web-app&gt;
+</pre></td></tr></tbody></table><br><p>The application can now be packaged as a War/Ear file and deployed into any
+                Java Platform, Enterprise Edition (Java EE)-based servlet container, such
+                as Tomcat or WebSphere®, and can be invoked using the URL
+          http://&lt;serverName:port&gt;/warfileName/hello/, substituting servername and
+        warfilename to the appropriate values.  In the example, I call
+          http://localhost:8090/sample/hello, as shown in Figure 1. </p><br><a name="fig1"><b>Figure 1. Sample HelloWorld Wicket
+          application</b></a><br><img alt="Sample HelloWorld Wicket application" height="273" src="./Wicket  A simplified framework for building and testing dynamic Web pages_files/figure1.jpg" width="572"><br><div class="ibm-alternate-rule"><hr></div><p class="ibm-ind-link ibm-back-to-top"><a href="http://www.ibm.com/developerworks/web/library/wa-aj-wicket/?S_TACT=105AGY82&S_CMP=GENSITE#ibm-pcon" class="ibm-anchor-up-link">Back to top</a></p><p><a name="lifeCycle"><span class="atitle">Wicket life
+      cycle</span></a></p><p> Having an in-depth knowledge of the Wicket life cycle helps you use
+        Wicket more effectively. The life cycle consists of the following steps:</p><ul><li>Application loading</li><li>Request processing</li><li>Rendering</li></ul><p><a name="applicationLoading"><span class="smalltitle">Application
+      loading</span></a></p><p> A Wicket-based application is loaded by defining a Wicket servlet in
+        the web.xml file, which can be loaded into any Java EE-based application server, as shown in
+        Listing 5. </p><br><a name="listing5"><b>Listing 5. web.xml</b></a><br><table width="100%" cellpadding="0" cellspacing="0" border="0"><tbody><tr><td class="code-outline"><pre class="displaycode">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE web-app
+      PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+      "http://java.sun.com/dtd/web-app_2_3.dtd"&gt;
+
+&lt;web-app&gt;
+	&lt;display-name&gt;Sample Wicket Application&lt;/display-name&gt;
+	&lt;servlet&gt;
+		&lt;servlet-name&gt;SampleWicketApplication&lt;/servlet-name&gt;
+		<strong>&lt;servlet-class&gt; wicket.protocol.http.WicketServlet &lt;/servlet-class&gt;</strong>
+		&lt;init-param&gt;
+			&lt;param-name&gt;applicationClassName&lt;/param-name&gt;
+			&lt;param-value&gt;wicket.sample.SampleApplication&lt;/param-value&gt;
+		&lt;/init-param&gt;
+	&lt;/servlet&gt;
+	&lt;servlet-mapping&gt;
+		&lt;servlet-name&gt;SampleApplication&lt;/servlet-name&gt;
+		&lt;url-pattern&gt;/sample/*&lt;/url-pattern&gt;
+	&lt;/servlet-mapping&gt;
+	&lt;welcome-file-list&gt;
+		&lt;welcome-file&gt;index.html&lt;/welcome-file&gt;
+	&lt;/welcome-file-list&gt;
+
+&lt;/web-app&gt;
+        </pre></td></tr></tbody></table><br><p>The servlet class specified must always be <code>wicket.protocol.http.WicketServlet</code> and the <code>applicationClassName</code> parameter value must of be of type <code>WebApplication</code>. In this case, <code>SampleApplication</code> extends
+          <code>WebApplication</code>. Whenever a client calls the
+    application in Listing 5 using the URL /sample/*, the server loads the <code>WicketServlet</code>, which in
+        turns creates a single instance of application class, that is, <code>SampleApplication</code>.</p><p>The <code>applicationClassName</code>
+        parameter specified must be the fully qualified name of a class that extends <code>WebApplication</code>. If the application class cannot be found,
+                does not
+        extend <code>WebApplication</code>, or cannot be instantiated, a runtime
+        exception of type <code>WicketRuntimeException</code> is thrown.
+          </p><p><a name="requestProcessing"><span class="smalltitle">Request processing</span></a></p><p>After the application class is loaded by the Wicket servlet, it
+        creates a session for the servlet request in case no session exists, using its session
+        factory.  The application then creates a <code>RequestCycle</code> object using the session
+        object and delegates the call to <code>RequestCycle</code> to handle the request. </p><p>The request
+            cycle then calls the <code>onBeginRequest</code> method to
+                let
+        subclasses do preprocessing operations just before the request is processed. The request
+        cycle goes through several states and, depending on the current state, sends different
+        instructions to the request cycle processor. After sending all instructions, the request cycle
+        reaches its final state, which denotes the end of request processing, as shown in
+        Figure 2 (to see a larger image, click <a href="http://www.ibm.com/developerworks/web/library/wa-aj-wicket/sidefile1.html">here</a>).
+        </p><br><a name="fig2"><b>Figure 2. Wicket's request processing
+          sequence flow</b></a><br><img alt="Request Cycle sequence flow diagram" height="507" src="./Wicket  A simplified framework for building and testing dynamic Web pages_files/figure2.jpg" width="572"><br><p>The request cycle processor is responsible for handling instructions during the request
+        cycle. It's used by <code>RequestCycle</code>, which calls its methods in the
+        predefined order: </p><ul><li><code>IRequestTarget resolve(RequestCycle, RequestParameters)</code> is
+          called to get the request target. For example, a request might refer to a bookmarkable
+          page or a component on a previously rendered page. This is one of the main
+          responsibilities of the request cycle processor. The <code>RequestParameters</code> object consists of all possible optional parameters that can
+          be translated from servlet request parameters and serves as a strongly typed variant of
+          these (see <code>IRequestCodingStrategy</code>).<br><br></li><li><code>void processEvents(RequestCycle)</code> is meant to handle events
+          like calls on components, for example, <code>onClick()</code> and <code>onSubmit()</code> event handlers.<br><br></li><li><code>void respond(RequestCycle)</code> is called to create a response,
+        that is, generate a Web page or do a redirect.<br><br></li><li><code>void respond(RuntimeException , RequestCycle)</code> is called
+          whenever an uncaught exception occurs during the event handling or response phase so that
+          an appropriate exception response can be generated.</li></ul><p><a name="rendering"><span class="smalltitle">Rendering</span></a></p><p> A page renders
+        itself by rendering its associated markup (the HTML file that sits next to the page). As
+          <code>MarkupContainer</code> (the superclass for page) iterates through the
+        markup stream for the associated markup, it looks up components attached to the tags in the
+        markup by ID. Because the <code>MarkupContainer</code> (in this
+                case, a page) is
+        already constructed and initialized by <code>onBeginRequest()</code>, the
+        child for each tag should be available in the container. After the Component is retrieved,
+        its <code>render()</code> method is called. </p><p><code>Component.render()</code> follows these steps to render a component: </p><ol><li>Determine component visibility. If the component is not visible, the <code>RequestCycle</code>'s
+          Response is changed to <code>NullResponse.getInstance()</code>, which is a
+          Response implementation that simply discards its output.</li><li><code>Component.onRender()</code> is called to allow the Component's
+        rendering implementation to actually render the Component.</li><li>Any Component models are detached to reduce the size of the Component
+            hierarchy, in case
+          it is replicated across a cluster.</li></ol><p> The <code>renderComponent</code> method gets a mutable copy of the next
+        Tag in the markup stream for the component and calls <code>onComponentTag(Tag)</code> to allow the subclass to modify the tag. After the subclass has
+        changed the tag, it is written out to the Response with <code>renderComponentTag(Tag)</code>, and the markup stream is advanced to the next tag. </p><p>
+        Next, <code>onComponentTagBody()</code> is called, passing in the <code>MarkupStream</code> and the <code>ComponentTag</code> that was
+        written out as the opening tag. This allows the component to do whatever it needs to do to
+        produce a body for the component tag. One operation the subclass can call in <code>onComponentTagBody()</code> is <code>Component.replaceComponentTagBody()</code>, which replaces the markup inside the
+        component's body with an arbitrary String. Finally, the framework writes out any appropriate
+        closing tag for the component's open tag. </p><p><a name="customComp"><span class="atitle">Creating custom components</span></a></p><p>One major
+        feature that Wicket offers is the ease with which custom components can be
+        developed. Wicket
+        provides a very flexible Component/programming model that makes developing custom components
+        a breeze. Custom components can be in the form of an HTML field or a panel that can be used within a
+        page.  Some of the common forms of reusable components in a Web-based application are Header, footer, Navigational bar, and so on. </p><p>First, take a look at Wicket's own component hierarchy that you can use with little effort to build a new
+        custom component, or extend it to add new features. </p><br><a name="fig3"><b>Figure 3. Component hierarchy</b></a><br><img alt="Component hierarchy" height="322" src="./Wicket  A simplified framework for building and testing dynamic Web pages_files/figure3.gif" width="485"><br><p><a name="component"><span class="smalltitle">Component</span></a></p><p><code>Component</code> sits at the top of the hierarchy and acts as an abstract base
+                class for all components. It provides various features such as</p><ul><li>Identity: Non-Null ID that must be unique within its container and can be
+            retrieved using <code>getID()</code></li><li>Model: Holds the data to be rendered as a response in HTML</li><li>Attributes: Can be added to any component to manipulate
+            the markup tag to which the component is attached</li></ul><p><a name="webComponent"><span class="smalltitle">WebComponent</span></a></p><p>The <code>WebComponent</code> acts as a base class for simple HTML components such as
+                Label and Image. </p><p><a name="markupContainer"><span class="smalltitle">MarkupContainer</span></a></p><p><code>MarkupContainer</code> holds all the child components and doesn't have its own
+        markup. Child components can be added or replaced by calling <code>add()</code> and <code>replace()</code> methods, respectively, and can be
+        retrieved by using the OGNL notation. For example, calling <code>get("a.b")</code> will return the
+        component whose ID is <code>"b"</code> and whose parent component ID is <code>"a"</code>. </p><p><a name="webMarkupContainer"><span class="smalltitle">WebMarkupContainer</span></a></p><p>This serves as a container of HTML markup and components. It is very similar to the base class
+        <code>MarkupContainer</code>, except that the markup type is defined to be HTML </p><p><a name="webMarkupContainerWithAssociatedMarkup"><span class="smalltitle">WebMarkupContainerWithAssociatedMarkup</span></a></p><p>This extends <code>WebMarkupContainer</code> and provides
+        the added ability to process header tags. </p><p><a name="panel"><span class="smalltitle">Panel</span></a></p><p> A <code>Panel</code> is a reusable component that holds
+        markup and other components. You can create reusable custom components by extending this
+        class. </p><p><a name="border"><span class="smalltitle">Border</span></a></p><p> A <code>Border</code> component has its own associated markup and can be used to
+        define the portion of its associated markup file, which is to be used in rendering the
+        border. </p><p><a name="page"><span class="smalltitle">Page</span></a></p><p><code>Page</code> acts as an abstract base class for all pages and can contain any
+        arbitrary tree of <code>Component</code>s. All life cycle events such as <code>onBeginRequest</code>, <code>onEndRequest()</code>, and <code>onModelChanged()</code> can be overridden by subclasses of <code>Page</code>, which are interested in
+          handling and processing those events. </p><p> Having had a brief overview of Wicket's own
+        component hierarchy, now take a look at how to build your own custom component by
+        extending Wicket's <code>Panel</code> component. </p><p>Using Figure 4, take a look at how to code a sample custom
+        component like footer using Wicket. </p><br><a name="fig4"><b>Figure 4. Footer component layout</b></a><br><img alt="Component Layout" height="147" src="./Wicket  A simplified framework for building and testing dynamic Web pages_files/figure4.gif" width="204"><br><p> A custom Wicket component that has a visual representation typically consists of the
+      following artifacts: </p><ul><li>An HTML template (Footer.html), as shown in Listing 6</li><li>Optional JavaScript, a style sheet, or Images</li><li>A corresponding Java <code>Component</code> class (Footer.java) that extends from one of the several
+          component base classes that comes with the standard Wicket distribution, as shown in
+          Listing 7.</li></ul><br><a name="listing6"><b>Listing 6. Footer.html</b></a><br><table width="100%" cellpadding="0" cellspacing="0" border="0"><tbody><tr><td class="code-outline"><pre class="displaycode">&lt;wicket:panel&gt;
+	&lt;hr&gt;
+	Copyright &lt;span wicket:id="year"&gt;2008&lt;/span&gt;. IBM Inc. All rights reserved.
+&lt;/wicket:panel&gt;
+        </pre></td></tr></tbody></table><br><br><a name="listing7"><b>Listing 7. Footer.java</b></a><br><table width="100%" cellpadding="0" cellspacing="0" border="0"><tbody><tr><td class="code-outline"><pre class="displaycode">import java.util.GregorianCalendar;
+import org.apache.wicket.markup.html.basic.Label;
+import org.apache.wicket.markup.html.panel.Panel;
+
+public final class Footer extends Panel {
+
+  public Footer(String id) {
+    super(id);
+    add(new Label("year", "" + new GregorianCalendar().get(GregorianCalendar.YEAR)));
+  }
+
+}
+</pre></td></tr></tbody></table><br><p><b>Note:</b> The artifacts in Listing 6 and Listing 7, the HTML artifacts, and the server-side representation of
+        the component (a Java class) typically reside in the same package </p><p><a name="embedComp"><span class="smalltitle">Embedding/using components</span></a></p><p>To use the component—after it has been defined—simply
+                instantiate it in the required <code>Page</code>
+        class (that is, &lt;Page&gt;.java) file, for example, Home.java (shown in Listing
+        8), and call
+        it by embedding the ID of the custom component in the corresponding template
+        (&lt;Template&gt;.html) file, such as Home.html, as shown in Listing 9.
+        </p><br><a name="listing8"><b>Listing 8. Home.java</b></a><br><table width="100%" cellpadding="0" cellspacing="0" border="0"><tbody><tr><td class="code-outline"><pre class="displaycode">import org.apache.wicket.markup.html.WebPage;
+public class Home extends WebPage {
+
+  public Home() {
+    add(new Footer("footer"));
+  }
+
+}
+</pre></td></tr></tbody></table><br><br><a name="listing9"><b>Listing 9. Home.html</b></a><br><table width="100%" cellpadding="0" cellspacing="0" border="0"><tbody><tr><td class="code-outline"><pre class="displaycode">&lt;html&gt;
+&lt;head&gt;&lt;/head&gt;
+&lt;body&gt;
+	Body of Home page.
+	&lt;span wicket:id="footer"&gt;Footer Info&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+</pre></td></tr></tbody></table><br><p><a name="wicketValidation"><span class="atitle">Wicket
+        validation</span></a></p><p> Wicket supports both client- and server-side form validations.
+        Validation is supported in the form of built-in validators. Wicket shifts with a number of
+        validators such as <code>NumberValidator</code>, <code>StringValidator</code>, <code>PatternValidator</code>, <code>DateValidator</code>, and <code>RequiredValidator</code>. </p><p>You can
+        also write a custom validator to perform validations that are not
+        built into
+        Wicket. In the case of server-side validation, after the form is submitted, Wicket
+        goes
+        through all the form components placed within the form and executes any attached
+        validators on component input. In the process, Wicket collects any error messages, if any are
+        thrown by the validators. The <code>FeedbackPanel</code> component then
+        displays all the collected error messages. </p><p><a name="Built-InValidators"><span class="smalltitle">Built-in validators</span></a></p><p>Wicket provides a much simpler way of handling validation. With Wicket, you can set any validators on the
+        field components at the time of creation in the page file. For example, a mandatory
+        field where you expect the user to enter some input is created in the page, as
+        shown in Listing 10.
+        </p><br><a name="listing10"><b>Listing 10. Making a TextField a mandatory
+input</b></a><br><table width="100%" cellpadding="0" cellspacing="0" border="0"><tbody><tr><td class="code-outline"><pre class="displaycode">TextField firstNameComp = new TextField("firstName");	
+	firstNameComp.setRequired(true);
+        </pre></td></tr></tbody></table><br><p>
+        In Wicket, the <code>FeedbackPanel</code> component renders
+        any form-related errors in the page. Actually, <code>FeedbackPanel</code>
+        displays all types of feedback messages attached to the components contained within the
+        <code>Page</code>. However, you can filter only those message types
+                (info, error, debug, warn, and so on) that
+        need to be displayed. This component can be added to the page as shown in Listing
+        11.</p><br><a name="listing11"><b>Listing 11. Adding FeedbackPanel in page class</b></a><br><table width="100%" cellpadding="0" cellspacing="0" border="0"><tbody><tr><td class="code-outline"><pre class="displaycode">add(new FeedbackPanel("feedBack"));
+        </pre></td></tr></tbody></table><br><p>
+        Reference to the <code>"feedback"</code> component needs to be added in the HTML markup to
+        display any validation errors if they exist, as shown in Listing 12.</p><br><a name="listing12"><b>Listing 12. Embedding FeedbackPanel in template file</b></a><br><table width="100%" cellpadding="0" cellspacing="0" border="0"><tbody><tr><td class="code-outline"><pre class="displaycode">&lt;span wicket:id="feedback"&gt;&lt;/span&gt; 
+        </pre></td></tr></tbody></table><br><p><a name="in-BuiltValidators"><span class="smalltitle">Custom validator</span></a></p><p>In a case where form-level validations can't be handled using built-in
+        validators you can create a custom validator by subclassing the <code>AbstractFormValidator</code> class and using a constructor that takes as parameters the
+        form components to be validated. Custom validators need to be added to the form at the time
+        of form instantiation. </p><p>Take an example where you need to ensure that either of
+        the two given fields in a form is not empty. Because this can't be achieved using a built-in
+        validator, you must write a custom validator, as shown in Listing 13 . </p><p> A custom validator can be built by extending the <code>AbstractFormValidator</code> class as
+          shown.</p><br><a name="listing13"><b>Listing 13. EitherInputValidator.java</b></a><br><table width="100%" cellpadding="0" cellspacing="0" border="0"><tbody><tr><td class="code-outline"><pre class="displaycode">import java.util.Collections;
+import org.apache.wicket.markup.html.form.Form;
+import org.apache.wicket.markup.html.form.FormComponent;
+import org.apache.wicket.markup.html.form.validation.AbstractFormValidator;
+import org.apache.wicket.util.lang.Objects;
+
+public class EitherInputValidator extends AbstractFormValidator {
+
+   	/** form components to be validated. */
+   	private final FormComponent[] components;
+
+   	public EitherInputValidator(FormComponent f1, FormComponent f2) {
+      		if (f1 == null) {
+         			throw new IllegalArgumentException(
+         				"FormComponent1 cannot be null");
+      		}
+      		if (f2 == null) {
+         			throw new IllegalArgumentException(
+         				"FormComponent2 cannot be null");
+      		}
+      		components = new FormComponent[] { f1, f2 };
+   	}
+
+   	public FormComponent[] getDependentFormComponents() {
+      		return components;
+   	}
+
+   	public void validate(Form form) {
+   		// we have a choice to validate the type converted values or the raw
+   		// input values, we validate the raw input
+   		final FormComponent f1 = components[0];
+   		final FormComponent f2 = components[1];
+   		String f1Value = Objects.stringValue(f1.getInput(), true);
+   		String f2Value = Objects.stringValue(f2.getInput(), true);
+   		if ("".equals(f1Value) || "".equals(f2Value)) {
+         			final String key = resourceKey(components);
+         			f2.error(Collections.singletonList(key), messageModel());
+      		}
+   	}
+}
+</pre></td></tr></tbody></table><br><p><b>Note:</b> You must call <code>FormComponent.getInput</code> to get the values
+        to be validated, rather than getting the associated models. This is because the models are
+        not updated until after validation. </p><p>To use a custom validator you must add it to the form, passing it field
+                elements on which the validation needs to be applied,  as shown in Listing
+                14.</p><br><a name="listing14"><b>Listing 14. Using custom validator in page class</b></a><br><table width="100%" cellpadding="0" cellspacing="0" border="0"><tbody><tr><td class="code-outline"><pre class="displaycode">	Form myForm = new Form("form");
+	FormComponent f1 = new TextField("firstName");
+	myForm.add(f1);
+	FormComponent f2 = new TextField("lastName");
+	myForm.add(f2);
+	myForm.add(new EitherInputValidator (f1, f2));
+        </pre></td></tr></tbody></table><br><p>Finally,
+        the message displayed if the validation fails needs to be added to the properties
+        file, as shown in Listing 15.</p><br><a name="listing15"><b>Listing 15. Validation message in the properties file</b></a><br><table width="100%" cellpadding="0" cellspacing="0" border="0"><tbody><tr><td class="code-outline"><pre class="displaycode">EitherInputValidator = Please enter data for either '${input0}' from ${label0} 
+					   or '${input1}' from ${label1}.
+        </pre></td></tr></tbody></table><br><p><a name="ajaxifyingWicket"><span class="atitle">Using Ajax with
+                Wicket</span></a></p><p>Ajax (Asynchronous Javascript And XML) not only allows you to build a
+        rich UI, but also a high-performance application because an Ajax-enabled application
+        only updates the page rather than causing an entire page refresh. This provides feedback similar
+        to a desktop-based application. This is achieved using the browser's implementation of <code>XMLHttpRequest</code>, which lets the client communicate asynchronously
+        with the server and manipulate the page content dynamically based on the response received
+        from the server through the use of HTML DOM APIs. </p><p>Wicket works around the problem of
+        users having to send and process the data between the server and browser. Instead of sending
+        data to the client, Wicket renders the components on the server side and sends the rendered
+        markup. This might not be as efficient, but it is much easier and faster to develop
+        Ajax behaviors. For example, if you want to update a panel that shows user information
+        on the client using Ajax, all that is necessary is to tell Wicket that the panel should be
+        updated. There is no need to parse the response returned by Wicket on the client using
+        JavaScript or to manipulate the DOM on the client. </p><p>In Wicket, an Ajax-based request
+        is modeled as a behavior. Wicket comes with several implementations of the <code>IBehaviour</code> interface such as <code>AbstractDefaultAjaxBehaviour</code> and <code>AjaxFormComponentUpdatingBehaviour</code>, which do the internal processing and
+                call the <code>respond()</code> method passing in the <code>AjaxRequestTarget</code>. This target object fetches the actual
+        content that needs to be sent back to the browser in response to the Ajax request. <code>AjaxRequestTarget</code> renders only those components that are added to
+        it, and built-in JavaScript artifacts re-render the added components by
+        initializing the HTML <code>outerHTML</code> property. </p><p>Let's take an Ajax
+          <code>AutoCompleteName</code> example where, based on the user input, the
+          application will predict a list of probables from which the user can select.</p><p>The application
+        consists of a page with a text field element, shown in Listing 16, a list of predefined
+        names (which can also be dynamic) in memory, and an Ajax behavior for displaying a list of
+        probable values when the user starts entering text.
+        </p><br><a name="listing16"><b>Listing 16. HTML page template (AutoCompleteName.html)</b></a><br><table width="100%" cellpadding="0" cellspacing="0" border="0"><tbody><tr><td class="code-outline"><pre class="displaycode">&lt;html&gt;
+  &lt;head&gt;
+	&lt;wicket:head&gt;
+		&lt;style&gt;
+		  div.wicket-aa {
+			font-family: Verdana,"Lucida Grande","Lucida Sans Unicode",Tahoma;
+			font-size: 12px;
+			background-color: white;
+			border-width: 1px;
+			border-color: #cccccc;
+			border-style: solid;
+			padding: 2px;
+			margin: 1px 0 0 0;
+			text-align:left;
+		  }
+		  div.wicket-aa ul { 
+		    list-style:none; padding: 2px; margin:0; 
+		  }
+		  div.wicket-aa ul li.selected { 
+		    background-color: #FFFF00; padding: 2px; margin:0; 
+		  }
+		&lt;/style&gt;
+	&lt;/wicket:head&gt;
+  &lt;/head&gt;
+
+  &lt;body bgcolor="#FFCC00"&gt;
+	&lt;br&gt;
+	&lt;br&gt;
+	&lt;form wicket:id="form"&gt;
+		&lt;b&gt;Name :&lt;/b&gt; &lt;input type="text" wicket:id="name" size="60" /&gt;
+	&lt;/form&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+      </pre></td></tr></tbody></table><br><br><a name="fig5"><b>Figure 5. Wicket Ajax example (on
+          load)</b></a><br><img alt="Wicket Ajax example (on load)" height="285" src="./Wicket  A simplified framework for building and testing dynamic Web pages_files/figure5.jpg" width="572"><br><p>In Wicket, this auto-completion behavior is modeled in class <code>AutoCompleteBehaviour</code>. You need to extend this class and provide implementation
+        for the methods <code>Iterator getChoices(String input);</code> to
+        return the probable user list based on the input (Listing 17).
+      </p><br><a name="listing17"><b>Listing 17. Page class (AutoCompleteName.java)</b></a><br><table width="100%" cellpadding="0" cellspacing="0" border="0"><tbody><tr><td class="code-outline"><pre class="displaycode">package myPackage;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
+
+import org.apache.wicket.extensions.ajax.markup.html.autocomplete.AutoCompleteTextField;
+import org.apache.wicket.markup.html.WebPage;
+import org.apache.wicket.markup.html.form.Form;
+import org.apache.wicket.model.Model;
+
+public class AjaxWorld extends WebPage {
+   	private List names = Arrays.asList(new String[] { "Kumarsun", "Ramkishore", 
+   	  "Kenneth", "Kingston", "Raju", "Rakesh", "Vijay", "Venkat", "Sachin" });
+
+   	public AjaxWorld() {
+
+      Form form = new Form("form");
+      AutoCompleteTextField txtName = new AutoCompleteTextField("name", new Model()){
+
+         protected Iterator getChoices(String input) {
+            			List probables = new ArrayList();
+            			Iterator iter = names.iterator();
+            			while (iter.hasNext()) {
+               				String name = (String) iter.next();
+               				if (name.startsWith(input)) {
+                  					probables.add(name);
+               				}
+            			}
+            			return probables.iterator();
+         		}
+      	};
+   	form.add(txtName);
+   	add(form);
+   }
+}
+      </pre></td></tr></tbody></table><br><br><a name="fig6"><b>Figure 6. Wicket Ajax example (Ajax
+          response)</b></a><br><img alt="Wicket Ajax example (Ajax response)." height="285" src="./Wicket  A simplified framework for building and testing dynamic Web pages_files/figure6.jpg" width="572"><br><p><a name="i18NSupport"><span class="atitle">I18N
+      Support</span></a></p><p> I18N in Wicket is handled by reading the messages from the
+        locale-specific properties files. This is done through the use of the <code>StringResourceModel</code> class in the page class or through the use of the <code>&lt;wicket:message&gt;</code> tag in the HTML markup file. <code>StringResourceModel</code> can also be used for formatting localized messages to be
+          displayed. </p><p><a name="i18NMessageTag"><span class="smalltitle">I18N using &lt;wicket:message&gt; tag</span></a></p><p> Labels and other information that needs to be
+        displayed in pages can be localized using the <code>&lt;wicket:message&gt;</code> tag instead of hard-coding the label as shown in Listing
+          18.</p><br><a name="listing18"><b>Listing 18. Template file (MyPage.html)</b></a><br><table width="100%" cellpadding="0" cellspacing="0" border="0"><tbody><tr><td class="code-outline"><pre class="displaycode">&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	&lt;form wicket:id="myForm"&gt;
+		&lt;wicket:message key="first-name"&gt;First Name&lt;/wicket:message&gt;
+	&lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+        </pre></td></tr></tbody></table><br><p>Whenever
+        Wicket encounters the <code>&lt;wicket:message&gt;</code> tag, it reads the
+        value of the key from the locale-specific properties based on the locale set on the HTTP
+        request object. </p><p><a name="i18NStringResourceModel"><span class="smalltitle">I18N using StringResourceModel class</span></a></p><p>Instead of using the <code>&lt;wicket:message&gt;</code> tag in the template page, you can directly use
+        the <code>StringResourceModel</code> in the page to retrieve
+        localized messages based on the input key, as shown in Listing 19. The advantage
+        of the
+          <code>StringResourceModel</code> class is that you can flexibly format the
+        message before rendering.
+        </p><br><a name="listing19"><b>Listing 19. Page class (MyPage.java)</b></a><br><table width="100%" cellpadding="0" cellspacing="0" border="0"><tbody><tr><td class="code-outline"><pre class="displaycode">public class MyPage extends WebPage {
+   	public MyPage() {
+      		Form form = new MyForm("myForm");
+      		String firstNameLabel = new StringResourceModel("first-name").getString();
+      		form.add(new Label("firstName", new Model(firstNameLabel)));
+      		add(form);
+   	}
+}
+        </pre></td></tr></tbody></table><br><p><a name="resourceBundleSearchOrder"><span class="smalltitle">Resource bundle
+        search order</span></a></p><p>As usual in Java i18n systems, messages are looked up by locale.
+        The locale is automatically extracted from the HTTP request header locale in the User Agent
+        field and set in the Wicket <code>WebRequest</code> object. However, it can
+        also be explicitly set with <code>getSession().setLocale(Locale.US)</code>.
+        </p><p>If you need to override the locale for a specific component, override <code>getLocale()</code> on that component and it will be used by that component
+        and its children. If a client does not provide a preferred Locale, the Java code default <code>Locale</code> is
+        used.</p><p>Wicket searches all resource files with the names equal to the components in
+        your component hierarchy, with your application last. Remember that
+        after the
+        message is found, Wicket halts the search process. So, when Wicket wants to look up a
+        message used in <code>MyPanel</code>, where <code>MyPanel</code> is contained within <code>MyForm</code> placed under <code>MyPage</code>, and
+        the application is called <code>MyApplication</code>, Wicket will look in: </p><ul><li>MyPanel_locale.properties, ..., and then MyPanel.properties</li><li>MyForm_locale.properties, ..., and then MyForm.properties</li><li>MyPage_locale.properties, ..., and then MyPage.properties</li><li>MyApplication_locale.properties, ..., and then MyApplication.properties (..)</li></ul><p> Actually, it even goes two steps further. Wicket will also look at property files for
+        the base classes of <code>MyPanel</code>, <code>MyForm</code>, <code>MyPage</code>, and <code>MyApplication</code>. When <code>MyPanel</code> inherits
+        directly from <code>Panel</code>, <code>MyForm</code>
+        directly from <code>Form</code>, <code>MyPage</code> directly from <code>Page</code>, and <code>MyApplication</code>
+        directly from <code>Application</code>, Wicket will look in: </p><ul><li>MyPanel_locale.properties, ..., and then MyPanel.properties</li><li>Panel_locale.properties, ..., and then Panel.properties</li><li>MyForm_locale.properties, ..., and then MyForm.properties</li><li>Form_locale.properties, ..., and then Form.properties</li><li>MyPage_locale.properties, ..., and then MyPage.properties</li><li>Page_locale.properties, ..., and then Page.properties</li><li>MyApplication_locale.properties, ..., and then MyApplication.properties (..)</li><li>Application_locale.properties, ..., and finally Application.properties (..)</li></ul><p> If all of the preceding steps fail, Wicket will use the <code>labelId</code> as the <code>Label</code>, by
+default.</p><p><b>Note:</b> If <code>MyForm</code> is modeled as an inner
+                class within <code>MyPage</code>, then wicket will look
+        for a resource file named MyPage$MyForm.properties So, as a best
+        practice you can use MyApplication.properties for site-wide
+        messages and override these in any of the other properties files. </p><br><a name="fig7"><b>Figure 7. Resource bundle search
+          order</b></a><br><img alt="Resource bundle search order" height="229" src="./Wicket  A simplified framework for building and testing dynamic Web pages_files/figure7.gif" width="437"><br><p><a name="unitTesting"><span class="atitle">Unit testing Wicket
+            pages</span></a></p><p> Wicket supports out-of-container unit testing through the use of a built-in
+        mock object framework. This framework makes sure that the framework and the surrounding
+        environment objects the application interacts with will behave as configured, even when
+        running outside a Java EE servlet container. This results in productivity gains
+        because you are not
+        required to restart the container, allowing you to concentrate on unit testing the
+        components you are interested in. </p><p>Mock objects are used to test a portion of your
+        code logic in isolation from the rest of the code.  They provide methods to let the tests
+        control the behavior of all the business methods of the faked class. </p><p>Wicket support
+        for unit testing is based on extending the JUnit framework. It's <code>wicket.util.tester.WicketTester</code> class provides lot of helper methods
+                that help you imitate various user actions, such as clicking a link or
+                form submission, and behaviors
+        such as page rendering or asserting the presence of error messages. </p><p>Listing 20 shows an
+        example of a production page (MyPage.java), with some components and user
+        actions such as a form submit and a link click.
+        </p><br><a name="listing20"><b>Listing 20. Page class (MyPage.java)</b></a><br><table width="100%" cellpadding="0" cellspacing="0" border="0"><tbody><tr><td class="code-outline"><pre class="displaycode">import org.apache.wicket.markup.html.WebPage;
+import org.apache.wicket.markup.html.basic.Label;
+import org.apache.wicket.markup.html.form.Button;
+import org.apache.wicket.markup.html.form.Form;
+import org.apache.wicket.markup.html.form.TextField;
+import org.apache.wicket.markup.html.link.Link;
+
+public class MyPage extends WebPage {
+   	public MyPage() {
+      		MyForm form = new Form("myForm");
+      		form.add(new Label("firstNameLabel", "First Name"));
+      		form.add(new Label("lastNameLabel", "Last Name"));
+
+      		form.add(new TextField("firstName"));
+      		form.add(new TextField("lastName"));
+
+      		form.add(new Button("Submit"));
+      		form.add(new Link("nextPage") {
+         			public void onClick() {
+            				setResponsePage(new NextPage("Hello!"));
+         			}
+      		});
+   	}
+}
+ </pre></td></tr></tbody></table><br><p><a name="pageRenderTest"><span class="smalltitle">Test case to test
+                page
+        render</span></a></p><p>One of the minimum tests that you must do is to ensure that each and
+        every page renders correctly. Successful execution of this test, as
+        shown in Listing 21, ensures that the template and the page hierarchy match.
+        </p><br><a name="listing21"><b>Listing 21. Page render test (MyPageRenderTest.java)</b></a><br><table width="100%" cellpadding="0" cellspacing="0" border="0"><tbody><tr><td class="code-outline"><pre class="displaycode">import org.apache.wicket.util.tester.WicketTester;
+import junit.framework.TestCase;
+
+public class MyPageRenderTest extends TestCase {
+
+   	private WicketTester tester;
+
+   	public void setUp() {
+      		tester = new WicketTester();
+   	}
+
+   	public void testMyPageBasicRender() {
+      		WicketTester tester = new WicketTester();
+      		tester.startPage(MyPage.class);
+      		tester.assertRenderedPage(MyPage.class);
+   	}
+}
+        </pre></td></tr></tbody></table><br><p><a name="pageComponentsTest"><span class="smalltitle">Test case to
+                test page
+        components</span></a></p><p>The 
+        <code>WicketTester</code> class has built-in methods to verify that a given
+        page has all the required components. This is done through the use of its <code>assertComponent()</code> method, passing it the component path and the component type to
+        expect at the given path, as shown in Listing 22 . The path given needs to be relative to the
+        page in which it is embedded.
+        </p><br><a name="listing22"><b>Listing 22. Page components test (MyPageComponentsTest.java)</b></a><br><table width="100%" cellpadding="0" cellspacing="0" border="0"><tbody><tr><td class="code-outline"><pre class="displaycode">import junit.framework.TestCase;
+import org.apache.wicket.markup.html.form.TextField;
+import org.apache.wicket.util.tester.WicketTester;
+
+public class MyPageComponentsTest extends TestCase {
+
+   	private WicketTester tester;
+
+   	public void setUp() {
+      		tester = new WicketTester();
+   	}
+
+   	public void testMyPageComponents() {
+      		WicketTester tester = new WicketTester();
+      		tester.startPage(MyPage.class);
+
+      		// assert rendered field components
+      		tester.assertComponent("myForm:firstName", TextField.class);
+      		tester.assertComponent("myForm:lastName", TextField.class);
+
+      		// assert rendered label components
+      		tester.assertLabel("myForm:firstNameLabel", "First Name");
+      		tester.assertLabel("myForm:lastNameLabel", "Last Name");
+
+   	}
+}
+</pre></td></tr></tbody></table><br><p><a name="pageOnClickTest"><span class="smalltitle">Test case to test OnClick
+        user action</span></a></p><p>Testing a user action such as clicking a link can be done using WicketTester's <code>clickLink()</code> method, passing it the link
+        component ID path, and then verifying the rendered page, as shown in Listing 23.
+        </p><br><a name="listing23"><b>Listing 23. Page OnClick action test</b></a><br><table width="100%" cellpadding="0" cellspacing="0" border="0"><tbody><tr><td class="code-outline"><pre class="displaycode">public void testOnClickAction() {
+		tester.startPage(MyPage.class);
+
+		// click link and render
+		tester.clickLink("nextPage");
+
+		tester.assertRenderedPage(NextPage.class);
+		tester.assertLabel("nextPageMessage", "Hello!");
+	} 
+
+public void testNextPageRender() {
+		// provide page instance source for WicketTester
+		tester.startPage(new TestPageSource() {
+			public Page getTestPage() {
+				return new NextPage("Hello!");
+			}
+		});
+
+		tester.assertRenderedPage(YourPage.class);
+		tester.assertLabel("nextPageMessage", "Hello!");
+
+	}
+        </pre></td></tr></tbody></table><br><p><a name="pageOnSubmitTest"><span class="smalltitle">Test case to
+                test the form
+        submit user action</span></a></p><p>Form submission in Wicket can be tested using
+        Wicket's <code>wicket.util.tester.FormTester</code> class, which has APIs
+        for setting the input values for the field components placed within a form, and subsequently
+        submitting the form. Assuming the page that gets displayed on submitting the form is
+        Welcome.java containing the message "Welcome to Wicket", form submission can be
+        tested as shown in Listing 24.</p><br><a name="listing24"><b>Listing 24. Page OnSubmit action test</b></a><br><table width="100%" cellpadding="0" cellspacing="0" border="0"><tbody><tr><td class="code-outline"><pre class="displaycode">public void testFormSubmit ()
+   {
+      		// Create the FormTester object
+      		FormTester ft = tester.newFormTester("myForm");
+
+      		// Set the input values on the field elements
+      		ft.setValue("firstName", "Kumar");
+      		ft.setValue("lastName", "Nadar");
+
+      		// Submit the form once the form is completed
+      		ft.submit("Submit");
+
+      		// Check the rendered page on form submission
+      		tester.asserRenderedPage(Welcome.class);
+      		// verify the message on the rendered page
+      		tester.assertInfoMessage(new String[]{"Welcome to Wicket"});
+
+	}
+        </pre></td></tr></tbody></table><br><p><a name="conclusion"><span class="atitle">Conclusion</span></a></p><p> A
+        Plain Old Java Object (POJO)-centric framework like Wicket can be used to rapidly
+        build Web-based applications in a
+        non-intrusive and simplified manner. HTML or other markups are not polluted with programming
+        code, making it easy for UI designers to recognize and avoid framework tagging. </p><p>Wicket allows developers to create pages in a Java-Swing-like fashion to
+                let them avoid the overuse of XML
+        configuration files. It also provides a comprehensive way to unit test the pages developed.</p><!-- CMA ID: 349546 --> <!-- Site ID: 1 --><!--XSLT stylesheet used to transform this file: dw-document-html-6.0.xsl-->
+<br><div class="ibm-alternate-rule"><hr></div><p class="ibm-ind-link ibm-back-to-top"><a href="http://www.ibm.com/developerworks/web/library/wa-aj-wicket/?S_TACT=105AGY82&S_CMP=GENSITE#ibm-pcon" class="ibm-anchor-up-link">Back to top</a></p><p><span class="atitle"><a name="download">Download</a></span></p><table width="100%" class="ibm-data-table" cellspacing="0" cellpadding="0" border="0"><tbody><tr><th scope="col">Description</th><th scope="col">Name</th><th scope="col">Size</th><th scope="col">Download method</th></tr><tr><td class="tb-row" scope="row">Sample Wicket Code for this article</td><td nowrap="nowrap">wa-aj-wicketsource.zip</td><td nowrap="nowrap">4KB</td><td nowrap="nowrap"><a class="fbox" href="http://www.ibm.com/developerworks/apps/download/index.jsp?contentid=349546&filename=wa-aj-wicketsource.zip&method=http&locale=worldwide">
+                    
+                    HTTP
+                    </a></td></tr></tbody></table><p><a href="http://www.ibm.com/developerworks/library/whichmethod.html" class="ibm-forward-link">Information about download methods</a></p><br>
+<p><a name="resources"><span class="atitle">Resources</span></a></p><p><b>Learn</b></p><ul><li>Read <a href="http://cwiki.apache.org/WICKET/control-where-html-files-are-loaded-from.html">Control where HTML files are loaded from</a> in the Apache Wicket documentation. <br><br></li><li>Check out the <a href="http://wicket.sourceforge.net/">Wicket home page</a> and the tutorials there to get a better understanding of how Wicket
+          works. <br><br></li><li>Visit <a href="http://www.wicket-library.com/wicket-examples/">Wicket examples</a> for a selection
+          of examples that best demonstrate its core functions. <br><br></li></ul><p><b>Get products and technologies</b></p><ul><li>Get <a href="http://wicket.apache.org/">Apache Wicket</a> and try it for yourself.
+      <br><br></li><li> Download <a href="http://www.antwerkz.com/qwicket/app/home">Qwicket</a>, a quick-start application for
+        the Wicket framework. <br><br></li></ul><p><b>Discuss</b></p><ul><li>Check out <a href="http://www.ibm.com/developerworks/blogs/">developerWorks blogs</a> and get involved
+        in the <a href="http://www.ibm.com/developerworks/community">developerWorks community</a>. <br><br></li></ul>
+<p><a name="author"><span class="atitle">About the author</span></a></p><div class="ibm-container ibm-portrait-module ibm-alternate-two"><div class="ibm-container-body"><img src="./Wicket  A simplified framework for building and testing dynamic Web pages_files/p-knadar.jpg" width="64" height="80" alt="Photo of Kumarsun"><p><a name="author1"></a>Kumarsun Nadar currently works as a Senior Staff Software Engineer with IBM India Software
+        Labs (ISL) in the WebSphere Business Service Fabric product team, based out of
+        Mumbai, India. As part of this team, he was involved in the UI development of the Fabric Web
+        Tools module, which was based on the Wicket framework. He has attained SUN Microsystems
+        certifications in SCJP, SCWCD and SCBCD and has experience in various client- and
+        server-side
+        technologies such as Wicket, EJB, Hibernate, Struts and so on, based on the Java/J2EE platform. His
+        hobbies include watching, as well as playing, sports such as Cricket, and TT.</p></div></div>
+<!-- MAIN_COLUMN_CONTENT_END -->
+
+<!-- OVERLAYS_START -->
+<!-- Report_Abuse_Start -->
+<div class="ibm-common-overlay ibm-no-print" id="reportabuseoverlay">
+   <div class="ibm-head"><p><a class="ibm-common-overlay-close" href="http://www.ibm.com/developerworks/web/library/wa-aj-wicket/?S_TACT=105AGY82&S_CMP=GENSITE#">Close [x]</a></p></div>
+   <div class="ibm-body">
+      <div class="ibm-main">
+         <a class="ibm-access" name="reportabuseoverlay">Report abuse help</a>   
+         <div class="ibm-title"><h1>Report abuse</h1></div>
+         <div class="ibm-container ibm-alternate">
+            <p><strong>Thank you.</strong>  This entry has been flagged for moderator attention.</p>
+            <div class="ibm-overlay-rule"><hr></div>
+            <div class="ibm-buttons-row">
+               <input type="button" onclick="ibmCommon.Overlays.hide(&#39;reportabuseoverlay&#39;);return false;" class="ibm-btn-cancel-sec dw-btn-cancel-sec" name="ibm-cancel" value="Close">
+            </div>
+         </div>
+      </div> 
+   </div>
+<div class="ibm-footer"></div>
+</div>
+<!-- Report_Abuse_Error_Start -->
+<div class="ibm-common-overlay ibm-no-print" id="reportabuseoverlayerror">
+   <div class="ibm-head"><p><a class="ibm-common-overlay-close" href="http://www.ibm.com/developerworks/web/library/wa-aj-wicket/?S_TACT=105AGY82&S_CMP=GENSITE#">Close [x]</a></p></div>
+   <div class="ibm-body">
+      <div class="ibm-main">
+         <a class="ibm-access" name="reportabuseoverlayerror">Report abuse help</a>   
+         <div class="ibm-title"><h1>Report abuse</h1></div>
+         <div class="ibm-container ibm-alternate">
+            <p class="ibm-ind-error"><strong>Report abuse submission failed.  Please try again later.</strong></p>
+            <div class="ibm-overlay-rule"><hr></div>
+            <div class="ibm-buttons-row">
+               <input type="button" onclick="ibmCommon.Overlays.hide(&#39;reportabuseoverlayerror&#39;);return false;" class="ibm-btn-cancel-sec dw-btn-cancel-sec" name="ibm-cancel" value="Close">
+            </div>
+         </div>
+      </div> 
+   </div>
+<div class="ibm-footer"></div>
+</div>
+<!-- Sign in OVERLAY STARTS HERE --> 
+<div class="ibm-common-overlay" id="signin_overlay">
+<div class="ibm-head">
+<p><a class="ibm-common-overlay-close" href="http://www.ibm.com/developerworks/web/library/wa-aj-wicket/?S_TACT=105AGY82&S_CMP=GENSITE#" onclick="clearForm();">Close [x]</a></p>
+</div>
+<div class="ibm-body">
+<div class="ibm-main">
+<div class="ibm-title ibm-subtitle">
+<h1>developerWorks: Sign in</h1>
+<div id="ibm-overlay-error-signin" class="no-display"></div>
+</div>
+
+<div class="ibm-container ibm-alternate ibm-buttons-last">
+<div class="ibm-container-body">
+<form class="ibm-column-form" id="sFormId" action="" method="post" name="sForm" onsubmit="return false;">
+<p><label for="ibmid">IBM ID:</label><span><input name="ibm-id" id="ibmid" size="25" value="" class="required" type="text" onkeypress="handleEP(event,this.form);"><br><a class="ibm-forward-link" href="http://www.ibm.com/developerworks/web/library/wa-aj-wicket/?S_TACT=105AGY82&S_CMP=GENSITE#" onclick="(function () {window.location=&#39;/developerworks/dwwi/DWAuthRouter?m=reg&amp;d=&#39;+encodeURIComponent(location.href);})();">Need an IBM ID?</a><br><a class="ibm-forward-link" href="http://www.ibm.com/developerworks/dwwi/jsp/WSHelp.jsp?lang=en_US">Forgot your IBM ID?</a>   
+</span></p> 
+<p><label for="password">Password:</label><span><input name="password" id="password" size="25" value="" class="required" type="password" onkeypress="handleEP(event,this.form);"><br><a class="ibm-forward-link" href="http://www.ibm.com/developerworks/web/library/wa-aj-wicket/?S_TACT=105AGY82&S_CMP=GENSITE#" onclick="(function () {window.location=&#39;https://www.ibm.com/account/profile?page=forgot&amp;lang=en_US&amp;appname=ibm&amp;required=null&amp;d=&#39;+encodeURIComponent(getAuthUrl())+&#39;%3Fm%3Dloginpage%26lang%3Den_US%26d%3D&#39;+encodeURIComponent(location.href);})();">Forgot your password?</a><br><a class="ibm-forward-link" href="http://www.ibm.com/developerworks/web/library/wa-aj-wicket/?S_TACT=105AGY82&S_CMP=GENSITE#" onclick="(function () {window.location=&#39;https://www.ibm.com/account/profile?page=chpw&amp;lang=en_US&amp;appname=ibm&amp;required=null&amp;d=&#39;+encodeURIComponent(location.href);})();">Change your password</a></span></p>
+ 
+<p class="dw-perm-box">
+	<span><input id="perm" type="checkbox" name="perm_name"><label for="perm"> Keep me signed in.</label></span>
+</p>
+<p>By clicking <strong>Submit</strong>, you agree to the <a href="https://www.ibm.com/developerworks/community/terms/">developerWorks terms of use</a>.</p>
+<div class="ibm-buttons-row">
+   <p><input class="ibm-btn-arrow-pri" name="ibm-submit" value="Submit" onclick="signin();return false;" type="submit"><span class="ibm-sep">&nbsp;</span>
+<input value="Cancel" type="button" name="ibm-cancel" class="ibm-btn-cancel-sec" onclick="clearForm();ibmCommon.Overlays.hide(&#39;signin_overlay&#39;);return false;"></p>
+</div>
+</form>
+<div class="ibm-overlay-rule"><hr></div>
+<p>The first time you sign into developerWorks, a profile is created for you.  <strong>Select information in your profile (name, country/region, and company) is displayed to the public and will accompany any content you post</strong>.  You may update your IBM account at any time.</p>
+<div class="dw-overlay-legal"><p>All information submitted is secure.</p></div>
+</div>
+</div>
+</div>
+</div>
+<div class="ibm-footer"></div>
+</div>
+<!-- Sign in OVERLAY ENDS HERE --> 
+ 
+
+<!-- Display name OVERLAY STARTS HERE --> 
+<div class="ibm-common-overlay" id="displayname_overlay">
+<div class="ibm-head">
+<p><a class="ibm-common-overlay-close" href="http://www.ibm.com/developerworks/web/library/wa-aj-wicket/?S_TACT=105AGY82&S_CMP=GENSITE#" onclick="clearForm();">Close [x]</a></p>
+</div>
+<div class="ibm-body">
+<div class="ibm-main">
+<div class="ibm-title ibm-subtitle">
+<h1>Choose your display name</h1>
+<div id="ibm-overlay-error-dname" class="no-display"></div>
+</div>
+<div class="ibm-container ibm-alternate ibm-buttons-last">
+<div class="ibm-container-body">
+<p class="ibm-overlay-intro">The first time you sign in to developerWorks, a profile is created for you, so you need to choose a display name.  Your display name accompanies the content you post on developerWorks.</p>
+<p><strong>Please choose a display name between 3-31 characters</strong>. Your display name must be unique in the developerWorks community and should not be your email address for privacy reasons.</p>
+<form id="dFormId" method="post" action="" name="dForm" onsubmit="return false;" class="ibm-column-form">
+<p><label for="displayname">Display name:</label><span><input name="displayname" id="displayname" size="25" value="" type="text" onkeypress="handleEP(event,this.form);"></span><span class="ibm-form-note">(Must be between 3 – 31 characters.)</span>
+</p>
+<p>By clicking <strong>Submit</strong>, you agree to the <a href="https://www.ibm.com/developerworks/community/terms/">developerWorks terms of use</a>.</p>
+<div class="ibm-buttons-row">
+   <p><input class="ibm-btn-arrow-pri" name="ibm-submit" value="Submit" onclick="signin();return false;" type="submit"><span class="ibm-sep">&nbsp;</span>
+<input value="Cancel" type="button" name="ibm-cancel" class="ibm-btn-cancel-sec" onclick="clearForm();ibmCommon.Overlays.hide(&#39;displayname_overlay&#39;);return false;"></p>
+</div>
+</form>
+<div class="ibm-overlay-rule"><hr></div>
+<div class="dw-overlay-legal"><p>All information submitted is secure.</p></div>
+</div>
+</div>
+</div>
+</div>
+<div class="ibm-footer"></div>
+</div>
+<!-- Display name OVERLAY ENDS HERE -->
+<!-- OVERLAYS_END -->
+
+<!-- RATINGS START -->
+<p class="ibm-no-print"><span class="atitle"><a name="iratings">Rate this article</a></span></p>
+<input id="art-rating" name="ratinga" type="hidden" value="4"><div id="art-rating-module"><p id="submitErr" class="ibm-ind-error" style="display: none;"><strong>Error: Submission failed. Please try again.</strong></p><p><span id="ratingSectUI"><img alt="Average rating 4 stars based on 162 votes" src="./Wicket  A simplified framework for building and testing dynamic Web pages_files/stars120x20-4gw.jpg" class="dw-avg-rating"> Average rating (162 votes)</span></p><div class="ibm-container" id="ratingForm"><div class="ibm-container-body dw-container-ratings"><form class="dw-ratings-form" onsubmit="artRating.submitRating(); return false;"><input type="radio" name="ratingstars" id="rat-1" value="1"><label class="rating-label" id="star1" for="rat-1">1 star</label><img id="rat-1-img" alt="1 star" title="1 star" src="./Wicket  A simplified framework for building and testing dynamic Web pages_files/stars120x20-1w.jpg" class="rating-image"><span class="dw-rating-text">1 star</span><br><input type="radio" name="ratingstars" id="rat-2" value="2"><label class="rating-label" id="star2" for="rat-2">2 stars</label><img id="rat-2-img" alt="2 stars" title="2 stars" src="./Wicket  A simplified framework for building and testing dynamic Web pages_files/stars120x20-2w.jpg" class="rating-image2"><span class="dw-rating-text">2 stars</span><br><input type="radio" name="ratingstars" id="rat-3" value="3"><label class="rating-label" id="star3" for="rat-3">3 stars</label><img id="rat-3-img" alt="3 stars" title="3 stars" src="./Wicket  A simplified framework for building and testing dynamic Web pages_files/stars120x20-3w.jpg" class="rating-image2"><span class="dw-rating-text">3 stars</span><br><input type="radio" name="ratingstars" id="rat-4" value="4"><label class="rating-label" id="star4" for="rat-4">4 stars</label><img id="rat-4-img" alt="4 stars" title="4 stars" src="./Wicket  A simplified framework for building and testing dynamic Web pages_files/stars120x20-4w.jpg" class="rating-image2"><span class="dw-rating-text">4 stars</span><br><input type="radio" name="ratingstars" id="rat-5" value="5"><label class="rating-label" id="star5" for="rat-5">5 stars</label><img id="rat-5-img" alt="5 stars" title="5 stars" src="./Wicket  A simplified framework for building and testing dynamic Web pages_files/stars120x20-5w.jpg" class="rating-image2"><span class="dw-rating-text">5 stars</span><div class="ibm-buttons-row"><p class="ibm-first"><input value="Submit" type="submit" name="ibm-submit" class="ibm-btn-arrow-pri dw-ratings-submit"></p></div></form></div></div></div>
+<script language="JavaScript" type="text/javascript">
+// <![CDATA[
+   // widget div id and article id as args
+   window.artRating.init('art-rating-module','art-rating-summary');
+// ]]>
+</script>
+<!-- RATINGS END -->
+
+<!-- INLINE_COMMENTS_START -->
+<p class="ibm-no-print"><span class="atitle"><a name="icomments">Comments</a></span></p>
+<div id="threadShow"><div id="cmtTog" style=""><div class="ibm-container ibm-alternate-two dw-commentbox dw-noborder"><p id="cmtHead"><label for="newCmt"><strong>Add comment:</strong></label></p><div class="ibm-container-body dw-commentbox dw-noborder"><p id="signInSect"> <a onclick="showSignIn();return false;" href="http://www.ibm.com/developerworks/web/library/wa-aj-wicket/?S_TACT=105AGY82&S_CMP=GENSITE#">Sign in</a> or <a href="http://www.ibm.com/developerworks/dwwi/DWAuthRouter?m=register&lang=en&d=http%3A%2F%2Fwww.ibm.com%2Fdeveloperworks%2Fweb%2Flibrary%2Fwa-aj-wicket%2F%3FS_TACT%3D105AGY82%26S_CMP%3DGENSITE%23icomments">register</a>  to leave a comment.</p><p>Note: HTML elements are not supported within comments.</p><span id="infoCmt"></span><form focus="name" enctype="multipart/form-data" method="post" action="" name="form" class="ibm-column-form"><p><textarea cols="120" rows="5" name="newCmt" id="newCmt" class="dw-inoperable" disabled=""></textarea><br></p><span class="ibm-input-group"><input type="checkbox" value="1" name="comment_notification" id="comment_notification" disabled=""><label id="notifyText" class="ibm-form-note dw-btn-cancel-sec" for="comment_notification">Notify me when a comment is added</label></span><span class="ibm-form-note dw-btn-cancel-sec notifySection" id="maxCharsCount"><span id="charCount">1000</span> characters left</span><br><br><p></p><p class="ibm-buttons-row"><input type="button" value="Post" jquery1275054459750="11" name="postCmt" id="postCmt" class="ibm-btn-arrow-sec dw-btn-arrow-sec" alt="Post your comment" disabled=""><br><br></p></form></div></div><div id="topControl" class="ibm-container ibm-alternate-two dw-comment-totals" style=""><div class="ibm-container-body"><form id="selectComments" method="get" action=""><p><span class="dw-comment-totals-label"><strong>Total comments (<span id="numCmts">4</span>)</strong></span><span><img src="./Wicket  A simplified framework for building and testing dynamic Web pages_files/c.gif" width="100" height="10" alt=""></span><span class="dw-how-many-comments-label" style="display:none" id="dropdownCmts"><label for="howManyComments">Show:</label>&nbsp;<select name="comments" id="howManyComments" class="dw-how-many-comments"><option selected="selected" value="recent">Most recent comments   </option></select><input type="image" class="ibm-btn-go" name="ibm-go" value="Go" src="./Wicket  A simplified framework for building and testing dynamic Web pages_files/short-btn.gif" alt="Go"><br></span></p></form></div></div><div id="cmtSect"><div class="comment"><div class="dw-icomment-container"><div class="dw-icomment-body dw-noborder"><div class="dw-icomment-body dw-noborder"><p>The tutorial needs to be updated for no confusion to beginner. Though, it is nice to have an introduction like this for using Wicket. Comments on Listing 5; you can use filter running on different application server but if you deployed the application to WebSphere that's the time you need to use Servlet. The newer version of wicket start with an "org.apache.*". The tutorial will still work if you just add a "org.apache." for all wicket classes.</p><p class="ibm-item-note-alternate dw-item-note-alternate-left">Posted by <strong><a href="https://www.ibm.com/developerworks/community/profiles/user/archetype">archetype</a></strong> on 28 April 2010</p><p class="ibm-ind-link ibm-item-note-alternate dw-item-note-alternate-right"><a class="ibm-caution-link dw-report-abuse" href="https://www.ibm.com/developerworks/community/report?lang=en&referingURL=http://www.ibm.com/developerworks/web/library/wa-aj-wicket/?S_TACT=105AGY82&S_CMP=GENSITE&mymessage=Comment:%20The%20tutorial%20needs%20to%20be%20updated%20for%20no%20confusion%20to%20beginner.%20Though%2C%20it%20is%20nice%20to%20have%20an%20introduction%20like%20this%20for%20using%20Wicket.%20Comments%20on%20Listing%205%3B%20you%20can%20use%20filter%20running%20on%20different%20application%20server%20but%20if%20you%20deployed%20the%20application%20to%20WebSphere%20that's%20the%20time%20you%20need%20to%20use%20Servlet.%20The%20newer%20version%20of%20wicket%20start%20with%20an%20%22org.apache.*%22.%20The%20tutorial%20will%20still%20work%20if%20you%20just%20add%20a%20%22org.apache.%22%20for%20all%20wicket%20classes.%0DPosted%20by%20archetype%20on%2028%20April%202010%0D%0D---%20Add%20any%20comments%20below%20this%20line%20---" target="_newtab">Report abuse</a></p><div class="dw-clear-both"></div></div></div></div></div><div class="comment"><div class="dw-icomment-container"><div class="dw-icomment-body dw-noborder"><div class="dw-icomment-body dw-noborder"><p>A bit disturbing that some configuration attributes are mentioned without ever getting explained. Otherwise good introduction tutorial... now hoping that it's not to fare from newer versions (see khaeerRafia's comment)</p><p class="ibm-item-note-alternate dw-item-note-alternate-left">Posted by <strong><a href="https://www.ibm.com/developerworks/community/profiles/user/JesperTejlgaardPedersen">JesperTejlgaardPedersen</a></strong> on 23 April 2010</p><p class="ibm-ind-link ibm-item-note-alternate dw-item-note-alternate-right"><a class="ibm-caution-link dw-report-abuse" href="https://www.ibm.com/developerworks/community/report?lang=en&referingURL=http://www.ibm.com/developerworks/web/library/wa-aj-wicket/?S_TACT=105AGY82&S_CMP=GENSITE&mymessage=Comment:%20A%20bit%20disturbing%20that%20some%20configuration%20attributes%20are%20mentioned%20without%20ever%20getting%20explained.%20Otherwise%20good%20introduction%20tutorial...%20now%20hoping%20that%20it's%20not%20to%20fare%20from%20newer%20versions%20(see%20khaeerRafia's%20comment)%0DPosted%20by%20JesperTejlgaardPedersen%20on%2023%20April%202010%0D%0D---%20Add%20any%20comments%20below%20this%20line%20---" target="_newtab">Report abuse</a></p><div class="dw-clear-both"></div></div></div></div></div><div class="comment"><div class="dw-icomment-container"><div class="dw-icomment-body dw-noborder"><div class="dw-icomment-body dw-noborder"><p>tutorial is not fit for newer version of wicket</p><p class="ibm-item-note-alternate dw-item-note-alternate-left">Posted by <strong><a href="https://www.ibm.com/developerworks/community/profiles/user/khadeerRafia">khadeerRafia</a></strong> on 25 October 2009</p><p class="ibm-ind-link ibm-item-note-alternate dw-item-note-alternate-right"><a class="ibm-caution-link dw-report-abuse" href="https://www.ibm.com/developerworks/community/report?lang=en&referingURL=http://www.ibm.com/developerworks/web/library/wa-aj-wicket/?S_TACT=105AGY82&S_CMP=GENSITE&mymessage=Comment:%20tutorial%20is%20not%20fit%20for%20newer%20version%20of%20wicket%0DPosted%20by%20khadeerRafia%20on%2025%20October%202009%0D%0D---%20Add%20any%20comments%20below%20this%20line%20---" target="_newtab">Report abuse</a></p><div class="dw-clear-both"></div></div></div></div></div><div class="comment"><div class="dw-icomment-container"><div class="dw-icomment-body dw-noborder"><div class="dw-icomment-body dw-noborder"><p>Best tutorial for Wicket bignner</p><p class="ibm-item-note-alternate dw-item-note-alternate-left">Posted by <strong><a href="https://www.ibm.com/developerworks/community/profiles/user/fakeid">fakeid</a></strong> on 01 October 2009</p><p class="ibm-ind-link ibm-item-note-alternate dw-item-note-alternate-right"><a class="ibm-caution-link dw-report-abuse" href="https://www.ibm.com/developerworks/community/report?lang=en&referingURL=http://www.ibm.com/developerworks/web/library/wa-aj-wicket/?S_TACT=105AGY82&S_CMP=GENSITE&mymessage=Comment:%20Best%20tutorial%20for%20Wicket%20bignner%0DPosted%20by%20fakeid%20on%2001%20October%202009%0D%0D---%20Add%20any%20comments%20below%20this%20line%20---" target="_newtab">Report abuse</a></p><div class="dw-clear-both"></div></div></div></div></div></div></div><div id="bottomControl" class="ibm-container ibm-alternate-two dw-comment-totals" style="display:none"><div class="ibm-container-body"><form id="selectComments2" method="get" action=""><p><span class="dw-comment-totals-label"><strong>Total comments (<span id="numCmts2">4</span>)</strong></span><span><img src="./Wicket  A simplified framework for building and testing dynamic Web pages_files/c.gif" width="100" height="10" alt=""></span><span class="dw-how-many-comments-label" style="display:none" id="dropdownCmts2"><label for="howManyComments2">Show:</label>&nbsp;<select name="comments" id="howManyComments2" class="dw-how-many-comments"><option selected="selected" value="recent">Most recent comments   </option></select><input type="image" class="ibm-btn-go" name="ibm-go" value="Go" src="./Wicket  A simplified framework for building and testing dynamic Web pages_files/short-btn.gif" alt="Go"><br></span></p></form></div></div></div>
+<!-- INLINE_COMMENTS_END -->
+
+<p class="ibm-ind-link ibm-back-to-top"><a class="ibm-anchor-up-link" href="http://www.ibm.com/developerworks/web/library/wa-aj-wicket/?S_TACT=105AGY82&S_CMP=GENSITE#ibm-pcon">Back to top</a></p>
+
+<!-- Overlays -->
+
+</div>
+<!-- MAIN_COLUMN_CONTAINER_END -->
+
+<!-- Rating_Meta_BEGIN -->
+<!--Rating_Meta_BEGIN--><div class="metavalue">static.content.url=http://www.ibm.com/developerworks/js/artrating/</div><div class="metavalue">SITE_ID=1</div><div class="metavalue">Zone=Web development</div><div class="metavalue">ArticleID=349546</div><div class="metavalue">ArticleTitle=Wicket: A simplified framework for building and testing dynamic Web
+    pages</div><div class="metavalue">publish-date=11042008</div><div class="metavalue">author1-email=kumarsun.nadar@in.ibm.com</div><div class="metavalue">author1-email-cc=</div><script language="javascript" type="text/javascript">document.write('<div class="metavalue">url='+location.href.replace(/</g, '%3C')+'</div>');</script><div class="metavalue">url=http://www.ibm.com/developerworks/web/library/wa-aj-wicket/?S_TACT=105AGY82&amp;S_CMP=GENSITE</div><!--Rating_Meta_END-->
+<!-- Rating_Meta_END -->
+
+</div>
+<!-- MAIN_COLUMN_END-->
+
+<!-- RIGHT_COLUMN_BEGIN -->
+<div id="ibm-content-sidebar">
+
+<!-- RIGHT_COLUMN_CONTENT_BEGIN --> 
+<div class="ibm-container"><h2>Table of contents</h2><div class="ibm-container-body"><img alt="" height="1" width="1" src="./Wicket  A simplified framework for building and testing dynamic Web pages_files/c(1).gif"><ul class="ibm-bullet-list"><li><a class="ibm-feature-link" href="http://www.ibm.com/developerworks/web/library/wa-aj-wicket/?S_TACT=105AGY82&S_CMP=GENSITE#overview">Overview</a></li><li><a class="ibm-feature-link" href="http://www.ibm.com/developerworks/web/library/wa-aj-wicket/?S_TACT=105AGY82&S_CMP=GENSITE#helloworld">HelloWorld example</a></li><li><a class="ibm-feature-link" href="http://www.ibm.com/developerworks/web/library/wa-aj-wicket/?S_TACT=105AGY82&S_CMP=GENSITE#lifeCycle">Wicket life
+      cycle</a></li><li><a class="ibm-feature-link" href="http://www.ibm.com/developerworks/web/library/wa-aj-wicket/?S_TACT=105AGY82&S_CMP=GENSITE#customComp">Creating custom components</a></li><li><a class="ibm-feature-link" href="http://www.ibm.com/developerworks/web/library/wa-aj-wicket/?S_TACT=105AGY82&S_CMP=GENSITE#wicketValidation">Wicket
+        validation</a></li><li><a class="ibm-feature-link" href="http://www.ibm.com/developerworks/web/library/wa-aj-wicket/?S_TACT=105AGY82&S_CMP=GENSITE#ajaxifyingWicket">Using Ajax with
+                Wicket</a></li><li><a class="ibm-feature-link" href="http://www.ibm.com/developerworks/web/library/wa-aj-wicket/?S_TACT=105AGY82&S_CMP=GENSITE#i18NSupport">I18N
+      Support</a></li><li><a class="ibm-feature-link" href="http://www.ibm.com/developerworks/web/library/wa-aj-wicket/?S_TACT=105AGY82&S_CMP=GENSITE#unitTesting">Unit testing Wicket
+            pages</a></li><li><a class="ibm-feature-link" href="http://www.ibm.com/developerworks/web/library/wa-aj-wicket/?S_TACT=105AGY82&S_CMP=GENSITE#conclusion">Conclusion</a></li><li><a class="ibm-feature-link" href="http://www.ibm.com/developerworks/web/library/wa-aj-wicket/?S_TACT=105AGY82&S_CMP=GENSITE#download">Download</a></li><li><a class="ibm-feature-link" href="http://www.ibm.com/developerworks/web/library/wa-aj-wicket/?S_TACT=105AGY82&S_CMP=GENSITE#resources">Resources</a></li><li><a class="ibm-feature-link" href="http://www.ibm.com/developerworks/web/library/wa-aj-wicket/?S_TACT=105AGY82&S_CMP=GENSITE#author">About the author</a></li><li><a class="ibm-feature-link" href="http://www.ibm.com/developerworks/web/library/wa-aj-wicket/?S_TACT=105AGY82&S_CMP=GENSITE#icomments">Comments</a></li></ul></div></div>
+<!--XSLT stylesheet used to transform this content: s-nextsteps.xsl--><div class="ibm-container"><h2>Next steps from IBM</h2><div class="ibm-container-body"><img width="188" height="58" border="0" alt="" src="./Wicket  A simplified framework for building and testing dynamic Web pages_files/spot-nextsteps.jpg"><p>Create rich Internet applications using WebSphere Portal Express Web 2.0
+   technologies.</p><div class="ibm-rule"><hr></div><ul class="ibm-bullet-list"><li><a href="http://www.ibm.com/developerworks/downloads/ls/wpe/" class="ibm-feature-link">Try: WebSphere Portal Express</a></li><li><a href="http://www.ibm.com/developerworks/websphere/library/techarticles/0606_bishop/0606_bishop.html" class="ibm-feature-link">Article: Get started using Ajax and WebSphere Portal Express</a></li><li><a href="http://www.ibm.com/developerworks/websphere/library/tutorials/0608_bishop/0608_bishop.html" class="ibm-feature-link">Tutorial: Quickly build a an Ajax-enabled WebSphere Portal Express Web application</a></li><li><a href="http://www.ibm.com/developerworks/offers/lp/demos/summary/ajax.html" class="ibm-feature-link">Demo: Architecture, design, and construction using the IBM Rational Software Delivery Platform: AJAX</a></li><li><a href="http://www.ibm.com/software/genservers/portalexpress/portalexpress-popup.html" class="ibm-feature-link">Buy: WebSphere Portal Express</a></li></ul></div></div>
+
+<!-- Dig_Deeper -->
+<div class="ibm-container"><h2>Dig deeper into Web development on developerWorks</h2><div class="ibm-container-body"><ul class="ibm-link-list"><li class="ibm-first"><a href="http://www.ibm.com/developerworks/web/" class="ibm-forward-link">Overview</a></li><li><a href="http://www.ibm.com/developerworks/web/newto/" class="ibm-forward-link">New to Web development</a></li><li><a href="http://www.ibm.com/developerworks/web/find/projects/" class="ibm-forward-link">Open source projects</a></li><li><a href="http://www.ibm.com/developerworks/web/library/" class="ibm-forward-link">Technical library (articles, tutorials, training, and more)</a></li><li><a href="http://www.ibm.com/developerworks/forums/dw_waforums.jsp" class="ibm-forward-link">Forums</a></li><li><a href="http://www.ibm.com/developerworks/web/find/events/" class="ibm-forward-link">Events</a></li></ul></div></div>
+<!-- High_Visibility_Offer -->
+<!--XSLT stylesheet used to transform this content: s-highvisibilityoffer.xsl--><div class="ibm-container"><h2>IBM SmartCloud trial. No charge.</h2><div class="ibm-container-body"><img width="188" height="70" border="0" alt="IBM PureSystems on a kaleideoscope background" src="./Wicket  A simplified framework for building and testing dynamic Web pages_files/hivis-cloud.jpg"><p>Unleash the power of hybrid cloud computing today!</p><div class="ibm-rule"><hr></div><p class="ibm-ind-link"><a href="http://www.ibm.com/developerworks/cloud/try/?ca=dti-hivis-troy" class="ibm-forward-link">Public and private solutions in one trial.</a></p></div></div>
+<!-- Special_Offers -->
+<div class="ibm-container"><h2>Special offers</h2><div class="ibm-container-body"><p class="dw-special-offers"><a href="http://www.ibm.com/developerworks/demos/"><img src="./Wicket  A simplified framework for building and testing dynamic Web pages_files/tile_v16_ondemanddemos.gif" width="158" height="50" border="0" alt="On demand demos: An easy way to watch and learn"></a></p><p class="dw-special-offers"><a href="http://www.ibm.com/developerworks/aboutdw/dwa/?ca=dti-dwarp"><img src="./Wicket  A simplified framework for building and testing dynamic Web pages_files/tile_v16_dwaarp.gif" width="158" height="50" border="0" alt="Get recognized! W Author Program"></a></p><p class="dw-special-offers"><a href="https://www.ibm.com/developerworks/cloud/index.html?ca=dti-cloudzone"><img src="./Wicket  A simplified framework for building and testing dynamic Web pages_files/tile_v16_cloudzoneA.gif" width="158" height="50" border="0" alt="Cloud Computing resources for IT professionals"></a></p><div class="ibm-rule"><hr></div><p class="ibm-ind-link"><a class="ibm-forward-link" href="http://www.ibm.com/developerworks/downloads/?ca=dti-tilemoreoffers">Trial software offers</a></p></div></div>
+<!-- RIGHT_COLUMN_CONTENT_END -->
+
+</div>
+<!-- RIGHT_COLUMN_END -->
+
+<!-- CONTENT_BODY_END -->
+</div>
+
+</div>
+<!-- CONTENT_END -->
+
+ <!-- END_IBM-PCON -->
+</div>
+
+<!-- FOOTER_BEGIN -->
+<div id="ibm-footer">
+<!-- IBM footer container; disabled -->
+</div>
+
+<div id="ibm-page-tools-dw">
+	<div id="dw-footer-top-row">
+		<ul id="dw-foot-options">
+			<li id="dw-print"><a class="ibm-print-link" href="http://www.ibm.com/developerworks/web/library/wa-aj-wicket/?S_TACT=105AGY82&S_CMP=GENSITE#">Print this page</a></li>
+		</ul>
+		<ul id="ibm-foot-options-dw">
+			<li id="dw-foot-0"><a href="http://www.ibm.com/developerworks/web/library/wa-aj-wicket/?S_TACT=105AGY82&S_CMP=GENSITE#">Share this page</a></li>
+			<li id="dw-foot-1"><a href="http://www.ibm.com/developerworks/web/library/wa-aj-wicket/?S_TACT=105AGY82&S_CMP=GENSITE#">Follow developerWorks</a></li>
+		</ul>
+	</div>
+
+	<!-- TOP ROW SLIDER -->
+    <div id="dw-page-tools-menu">    
+        <div class="ibm-ribbon-pane-dw">
+            <div class="ibm-ribbon-section-dw">
+				<!-- Share this page -->			
+                <div class="dw-footer-columns">
+                    <div class="dw-footer-col-3-1">
+                        <h2>Share this page:</h2>                       
+						<ul class="ibm-link-list">
+							<li><a id="dw-foot-0-0" class="ibm-facebook-link" href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fwww.ibm.com%2Fdeveloperworks%2Fweb%2Flibrary%2Fwa-aj-wicket%2F%3FS_TACT%3D105AGY82%26S_CMP%3DGENSITE&t=Wicket%3A%20A%20simplified%20framework%20for%20building%20and%20testing%20dynamic%20Web%20pages">Facebook</a></li>
+							<li><a class="ibm-linkedin-link" href="http://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fwww.ibm.com%2Fdeveloperworks%2Fweb%2Flibrary%2Fwa-aj-wicket%2F%3FS_TACT%3D105AGY82%26S_CMP%3DGENSITE&title=Wicket%3A%20A%20simplified%20framework%20for%20building%20and%20testing%20dynamic%20Web%20pages">LinkedIn</a></li>
+							<li><a class="ibm-twitter-link" href="http://twitter.com/home?status=http%3A%2F%2Fwww.ibm.com%2Fdeveloperworks%2Fweb%2Flibrary%2Fwa-aj-wicket%2F%3FS_TACT%3D105AGY82%26S_CMP%3DGENSITE%20-%20Wicket%3A%20A%20simplified%20framework%20for%20building%20and%20testing%20dynamic%20Web%20pages">Twitter</a></li>
+						</ul>
+                    </div>
+                    <div class="dw-footer-col-3-2">
+						<ul class="ibm-link-list">
+							<li><a class="ibm-delicious-link" href="http://delicious.com/post?url=http%3A%2F%2Fwww.ibm.com%2Fdeveloperworks%2Fweb%2Flibrary%2Fwa-aj-wicket%2F%3FS_TACT%3D105AGY82%26S_CMP%3DGENSITE&title=Wicket%3A%20A%20simplified%20framework%20for%20building%20and%20testing%20dynamic%20Web%20pages">Delicious</a></li>
+							<li><a class="ibm-digg-link" href="http://digg.com/submit?phase=2&url=http%3A%2F%2Fwww.ibm.com%2Fdeveloperworks%2Fweb%2Flibrary%2Fwa-aj-wicket%2F%3FS_TACT%3D105AGY82%26S_CMP%3DGENSITE&title=Wicket%3A%20A%20simplified%20framework%20for%20building%20and%20testing%20dynamic%20Web%20pages">Digg</a></li>
+							<li><a class="ibm-stumbleupon" href="http://www.stumbleupon.com/submit?url=http%3A%2F%2Fwww.ibm.com%2Fdeveloperworks%2Fweb%2Flibrary%2Fwa-aj-wicket%2F%3FS_TACT%3D105AGY82%26S_CMP%3DGENSITE&title=Wicket%3A%20A%20simplified%20framework%20for%20building%20and%20testing%20dynamic%20Web%20pages">StumbleUpon</a></li>
+						</ul>
+                    </div>
+                    <div class="dw-footer-col-3-3">
+						<ul class="ibm-link-list">
+							<li><a class="ibm-email-link" href="http://www.ibm.com/developerworks/web/library/wa-aj-wicket/?S_TACT=105AGY82&S_CMP=GENSITE#">Email this page</a></li>
+						</ul>
+                    </div>
+                    <div class="dw-footer-close">
+						<ul>
+							<li><div class="dw-footer-close-share"><a href="http://www.ibm.com/developerworks/web/library/wa-aj-wicket/?S_TACT=105AGY82&S_CMP=GENSITE#"><img src="./Wicket  A simplified framework for building and testing dynamic Web pages_files/c.gif" alt="Close [x]" width="20" height="10" border="0"></a></div></li>
+						</ul>
+                    </div>
+                </div>
+                <!-- Follow developerWorks -->
+                <div class="dw-footer-columns">
+                    <div class="dw-footer-col-1-1">
+                        <h2>Follow developerWorks:</h2>
+						<ul class="ibm-link-list">
+							<li><a id="dw-foot-1-0" class="ibm-facebook-link" href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fwww.ibm.com%2Fdeveloperworks%2Fweb%2Flibrary%2Fwa-aj-wicket%2F%3FS_TACT%3D105AGY82%26S_CMP%3DGENSITE&t=Wicket%3A%20A%20simplified%20framework%20for%20building%20and%20testing%20dynamic%20Web%20pages">Facebook</a></li>
+							<li><a class="ibm-twitter-link" href="http://twitter.com/home?status=http%3A%2F%2Fwww.ibm.com%2Fdeveloperworks%2Fweb%2Flibrary%2Fwa-aj-wicket%2F%3FS_TACT%3D105AGY82%26S_CMP%3DGENSITE%20-%20Wicket%3A%20A%20simplified%20framework%20for%20building%20and%20testing%20dynamic%20Web%20pages">Twitter</a></li>
+						</ul>
+                    </div>
+                    <div class="dw-footer-close">
+						<ul>
+							<li><div class="dw-footer-close-follow"><a href="http://www.ibm.com/developerworks/web/library/wa-aj-wicket/?S_TACT=105AGY82&S_CMP=GENSITE#"><img src="./Wicket  A simplified framework for building and testing dynamic Web pages_files/c.gif" alt="Close [x]" width="20" height="10" border="0"></a></div></li>
+						</ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="ibm-footer-module-dw">
+	<div class="dw-footer-columns">
+		<div class="dw-footer-col-6-1">
+			<ul>
+				<li><a href="http://www.ibm.com/developerworks/aboutdw/">About</a></li>
+				<li><a href="https://www.ibm.com/developerworks/feedback">Help</a></li>
+				<li><a href="http://www.ibm.com/developerworks/aboutdw/contacts.html">Contact us</a></li>
+				<li><a href="https://www.ibm.com/developerworks/ideas">Submit content</a></li>
+			</ul>
+		</div>
+		<div class="dw-footer-col-6-2">
+			<ul>
+				<li><a href="http://www.ibm.com/developerworks/feeds/">Feeds</a></li>
+			</ul>
+		</div>
+		<div class="dw-footer-col-6-3">
+			<ul>
+				<li><a href="https://www.ibm.com/developerworks/community/report/">Report abuse</a></li>
+				<li><a href="https://www.ibm.com/developerworks/community/terms/">Terms of use</a></li>
+				<li><a href="http://www.ibm.com/privacy/">IBM privacy</a></li>
+				<li><a href="http://www.ibm.com/accessibility/">IBM accessibility</a></li>
+			</ul>
+		</div>
+		<div class="dw-footer-col-6-4">
+			<ul>
+				<li><a href="http://www.ibm.com/developerworks/university/academicinitiative/">Faculty</a></li>
+				<li><a href="http://www.ibm.com/developerworks/university/students/">Students</a></li>
+				<li><a href="http://www.ibm.com/isv/">Business Partners</a></li>
+			</ul>
+		</div>
+		<div class="dw-footer-col-6-5">
+		</div>
+		<div class="dw-footer-col-6-6">
+			<img src="./Wicket  A simplified framework for building and testing dynamic Web pages_files/dwn-ibm-logo-v16.png" alt="IBM®" width="100" height="46">
+			<img class="dw-preload" src="./Wicket  A simplified framework for building and testing dynamic Web pages_files/arrow-down-active.gif" alt="" width="1" height="1">
+		</div>
+	</div>
+	<!-- Language selector no-script -->
+	<noscript>
+	&lt;div id="dw-footer-selectlang"&gt;
+		&lt;h2&gt;&lt;a name="SELECTLANG"&gt;Select a language:&lt;/a&gt;&lt;/h2&gt;
+		&lt;ul&gt;
+			&lt;li&gt;&lt;a href="http://www.ibm.com/developerworks/"&gt;English&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;a href="http://www.ibm.com/developerworks/cn/"&gt;中文&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;a href="http://www.ibm.com/developerworks/jp/"&gt;日本語&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;a href="http://www.ibm.com/developerworks/ru/"&gt;Русский&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;a href="http://www.ibm.com/developerworks/br/"&gt;Português (Brasil)&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;a href="http://www.ibm.com/developerworks/ssa/"&gt;Español&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;a href="http://www.ibm.com/developerworks/vn/"&gt;Việt&lt;/a&gt;&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/div&gt;
+	</noscript>
+</div><!-- FOOTER_END -->
+
+ <!-- END_IBM-TOP -->
+<div id="ibm-overlay-top"></div></div>
+ 
+ <!-- SCRIPTS_INCLUDE_BEGIN -->
+<!-- JQuery start -->
+<script type="text/javascript" language="JavaScript" src="./Wicket  A simplified framework for building and testing dynamic Web pages_files/jquery.hoverIntent.minified.js"></script>
+<script type="text/javascript" language="JavaScript" src="./Wicket  A simplified framework for building and testing dynamic Web pages_files/jquery.cluetip.js"></script>
+<!-- xM Masthead/Footer -->
+<script type="text/javascript" language="JavaScript" src="./Wicket  A simplified framework for building and testing dynamic Web pages_files/jquery.tools.min.js">//</script>
+<script type="text/javascript" language="JavaScript" src="./Wicket  A simplified framework for building and testing dynamic Web pages_files/jquery.jscroll.js">//</script>
+<script type="text/javascript" language="JavaScript" src="./Wicket  A simplified framework for building and testing dynamic Web pages_files/dw_v16.js">//</script>
+<script type="text/javascript" language="JavaScript" src="./Wicket  A simplified framework for building and testing dynamic Web pages_files/flash-detect(1).js">//</script>
+<script type="text/javascript" language="JavaScript" src="./Wicket  A simplified framework for building and testing dynamic Web pages_files/dwsi.js">//</script>
+<script type="text/javascript" language="JavaScript" src="./Wicket  A simplified framework for building and testing dynamic Web pages_files/showcomments.js">//</script>
+<script language="JavaScript" type="text/javascript">
+// <![CDATA[
+ jQuery('threadShow').showComments('95%',5,'nCmts','icomments');
+// ]]>
+</script>
+
+<script type="text/javascript" language="JavaScript">
+	jQuery.noConflict();     
+	// Put all your code in your document ready area
+	jQuery(document).ready(function(jQuery) {
+	// Do jQuery stuff using jQuery 
+	jQuery('a.dwauthor').cluetip({
+		local: true,
+		showTitle: false,
+		positionBy: 'bottomTop',
+		sticky: true,	
+		mouseOutClose: true,
+		closeText: '<img src="//dw1.s81c.com/developerworks/js/jquery/cluetip98/i/x.gif" alt="Close" />',
+		arrows: false,
+		dropShadow: true,
+		cluetipClass: 'dwbasic'
+		});
+
+		rBHash = {};
+		rBHash['viperLang'] = 'en';
+		rBHash['urlLang'] = 'en';
+
+		// si
+		initSI();
+	});
+ </script>
+ <!-- JQuery end -->
+ <!-- Overlay js -->
+<script language="JavaScript" src="./Wicket  A simplified framework for building and testing dynamic Web pages_files/overlay.js" type="text/javascript"></script><!-- BEGIN: Use this section to set page specific variables for the Unica Page Tag -->
+<script language="JavaScript">var NTPT_PGEXTRA="ibmSkillLevel=3&ibmAdoptPhase=-&ibmRole=-&ibmCmaId=349546&ibmContentAreas=web";</script>
+<!--END --><!-- SCRIPTS_INCLUDE_END -->
+
+<div id="ibm-metrics">
+<script src="./Wicket  A simplified framework for building and testing dynamic Web pages_files/stats.js" type="text/javascript">//</script>
+</div>
+
+
+<div id="cluetip-waitimage" style="position: absolute; z-index: 95; display: none;"></div><div id="cluetip" style="z-index: 96; display: none; position: absolute;"><div style="z-index: 95; opacity: 0.1; top: 1px; left: 1px; position: absolute; background-color: rgb(0, 0, 0);"></div><div style="z-index: 94; opacity: 0.1; top: 2px; left: 2px; position: absolute; background-color: rgb(0, 0, 0);"></div><div style="z-index: 93; opacity: 0.1; top: 3px; left: 3px; position: absolute; background-color: rgb(0, 0, 0);"></div><div style="z-index: 92; opacity: 0.1; top: 4px; left: 4px; position: absolute; background-color: rgb(0, 0, 0);"></div><div style="z-index: 91; opacity: 0.1; top: 5px; left: 5px; position: absolute; background-color: rgb(0, 0, 0);"></div><div style="z-index: 90; opacity: 0.1; top: 6px; left: 6px; position: absolute; background-color: rgb(0, 0, 0);"></div><div id="cluetip-outer" style="position: relative; z-index: 97;"><div id="cluetip-title"></div><div id="cluetip-inner"></div></div><div id="cluetip-extra"></div><div id="cluetip-arrows" class="cluetip-arrows" style="z-index: 97;"></div></div></body></html>

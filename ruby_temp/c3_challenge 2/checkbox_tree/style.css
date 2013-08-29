@@ -1,0 +1,22 @@
+body {
+    font-family: arial;
+}
+li {
+    font-size: 10px;
+    color: grey;
+    margin-left: 30px;
+}
+ul {
+    font-size: 12px;
+    font-weight: bold;
+    color: blue;
+}
+.hidden { 
+	display: none; 
+}
+a:hover {
+ cursor:pointer;
+}
+.link {
+	color: blue;
+}

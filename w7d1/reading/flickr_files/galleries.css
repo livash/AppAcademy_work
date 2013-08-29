@@ -1,0 +1,48 @@
+/* line 4, ../../app/assets/stylesheets/galleries.css.scss */
+.right-sidebar {
+  width: 20%;
+  height: auto;
+  position: fixed;
+  margin-left: 80%;
+  float: right;
+}
+
+/* line 11, ../../app/assets/stylesheets/galleries.css.scss */
+.left-container {
+  width: 80%;
+  height: auto;
+  float: left;
+}
+
+/* line 16, ../../app/assets/stylesheets/galleries.css.scss */
+.single-gallery {
+  margin-left: 15%;
+}
+
+/*TEST square, used to test photo position in side bars*/
+/* line 23, ../../app/assets/stylesheets/galleries.css.scss */
+.square {
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+}
+
+/* line 28, ../../app/assets/stylesheets/galleries.css.scss */
+.blue {
+  background-color: blue;
+}
+
+/* line 31, ../../app/assets/stylesheets/galleries.css.scss */
+.red {
+  background-color: red;
+}
+
+/* line 34, ../../app/assets/stylesheets/galleries.css.scss */
+.green {
+  background-color: green;
+}
+
+/* line 37, ../../app/assets/stylesheets/galleries.css.scss */
+.orange {
+  background-color: orange;
+}

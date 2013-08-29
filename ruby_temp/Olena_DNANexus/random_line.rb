@@ -1,0 +1,2 @@
+# ran out of time for this one.
+#What I would do here is the first time I read each line of the file, I would calculate the size of each line and store the number of bytes up to line X in my index file. I would use that index file to quickly look up the position in the main file that I should jump to for subsequent searches.
